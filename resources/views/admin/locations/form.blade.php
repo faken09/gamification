@@ -26,7 +26,7 @@
 </div>
 
 <div>
-    <label>Image - 250x250 størrelse
+    <label>Image
         @if ($errors->has('image'))
             <span class="span-error">
                                         :{{ $errors->first('image') }}
