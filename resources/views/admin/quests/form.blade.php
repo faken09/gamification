@@ -111,7 +111,7 @@
 
 <div>
     <label>Fjende
-        @if ($errors->has('enemy'))
+        @if ($errors->has('enemy')) test
             <span class="span-error">
                     :{{ $errors->first('enemy') }}
                                     </span>
