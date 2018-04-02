@@ -11,7 +11,7 @@
                 </div>
             @endif
             <h1>Velkommen admin {{ Auth::user()->username }} </h1>
-            <h3>Admin dashboard</h3>
+            <h3>Admin dashboard - Muligheder</h3>
         </header>
         <nav>
             <nav>
