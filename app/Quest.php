@@ -13,7 +13,7 @@ class Quest extends Model
 
     public function Enemy()
     {
-        return $this->belongsTo('App\enemy');
+        return $this->belongsTo('App\Enemy');
     }
 
     public function location()
@@ -24,6 +24,11 @@ class Quest extends Model
     public function level()
     {
         return $this->belongsTo('App\Level');
+    }
+
+    public function characters()
+    {
+        return $this->belongsToMany('App\Character');
     }
 
 

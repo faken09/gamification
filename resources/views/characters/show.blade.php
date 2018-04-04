@@ -1,12 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-inner">
+    <section class="container-inner">
 
-        <div class="card">
-            <div class="card-header">Character Sheet</div>
 
-            <div class="card-body">
+        <header>
+            <h1>Character Sheet</h1>
+            <p><a href="{{route('characters.quests.index', ['name'=>$character->name])}}">Quests</a></p>
+        </header>
+
+        <article>
                 <img src="{{asset(env('STORAGE_DISK_PATH')."/characters/".$character->image_sm)}}"> <br/>
                 <b>Character:</b>
                 <br/>Level: <b>{{$character->level_id}}</b>
@@ -23,7 +26,7 @@
                 Charisma: <b>{{$character->charisma}}</b>
 
 
-            </div>
-        </div>
-    </div>
+        </article>
+        </section>
 @endsection
+

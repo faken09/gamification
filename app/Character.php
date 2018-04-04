@@ -25,4 +25,10 @@ class Character extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function quests()
+    {
+        return $this->belongsToMany('App\Quest');
+    }
+
+
 }

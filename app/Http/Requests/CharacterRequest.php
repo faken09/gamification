@@ -34,7 +34,7 @@ class CharacterRequest extends FormRequest
             {
                 return [
                     'name' => 'required|min:3|max:50|unique:characters,name',
-                    'image' => 'mimes:jpeg',
+                    'image' => 'mimes:jpeg,jpg,png,gif',
 
                 ];
             }
@@ -43,7 +43,7 @@ class CharacterRequest extends FormRequest
             {
                 return [
                     'ingameid' => 'min:3|max:50|unique:characters,name,'.$this->id,
-                    'image' => 'mimes:jpeg',
+                    'image' => 'mimes:jpeg,jpg,png,gif',
                 ];
             }
             default:break;

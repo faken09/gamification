@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Character;
 use App\Http\Requests\CharacterRequest;
+use App\Quest;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -85,5 +86,15 @@ class CharacterController extends Controller
             }
         }
 
+    }
+
+    // Show specific character
+    public function showQuest($name)
+    {
+        $character = Character::where('name', '=', $name)->firstOrFail();
+        if ($character) {
+            $quests = Quest::orderBy('required_level', 'ASC')->get();
+            return view('characters.quests.index', compact('character', 'quests'));
+        }
     }
 }

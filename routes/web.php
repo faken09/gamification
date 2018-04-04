@@ -32,6 +32,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('character/creation', 'CharacterController@create')->name('character.create');
     Route::post('character/save', 'CharacterController@store')->name('character.store');
     Route::get('character/{name}', 'CharacterController@show')->name('character.show');
+
+
+    Route::get('character/{name}/quests', 'CharacterController@showQuest')->name('characters.quests.index');
 });
 
 // Route group for user with admin role
