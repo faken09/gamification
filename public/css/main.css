@@ -109,7 +109,7 @@ html {
 body {
     min-height: 100%;
     font-family: 'Roboto', sans-serif;
-    background-color: #003a79;
+    background-color: #1c2938;
     overflow-y: scroll;
     overflow-x: hidden;
 
@@ -122,11 +122,13 @@ h1, h2, h3, h4, h5, p {
 }
 
 h1 {
-   font-size: 2.3rem;
+    font-size: 1.6em;
+    font-weight: normal;
+    text-transform: uppercase;
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
 }
 
 
@@ -134,9 +136,17 @@ h4 {
     font-weight: normal;
 }
 
+p {
+    color: #ccc;
+}
+
 a {
     text-decoration: none;
-    color: #00aeff;
+    color: #b8b6b4;
+}
+
+.grid a:hover img {
+    box-shadow:  0 0 5px #35809f;
 }
 
 ul {
@@ -156,6 +166,14 @@ ul {
 
 .margin-r {
     margin-right: 10px;
+}
+
+.no-padding {
+    padding:0px !important;
+}
+
+.no-margin {
+    margin:0px !important;
 }
 
 .container-check  {
@@ -225,39 +243,29 @@ ul {
 }
 
 .wallpaper {
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
+    z-index: -8;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0px;
 }
 
 #stars {
     background-attachment: fixed;
-    background-image: url(../img/bg4.jpg);
+    background-image: url(../img/cluster_bg.png);
     background-repeat: no-repeat;
-    z-index: -9;
-    opacity: 0.26;
     background-size: cover;
 }
 
-#grass {
-    background-attachment: fixed;
-    background-image: url(../img/grass.jpg);
-    background-repeat: no-repeat;
-    z-index: -9;
-    opacity: 0.26;
-    background-size: cover;
-}
 
 #navigation {
     float: left;
     width: 100%;
-    border-bottom: 1px solid #023b79;
-    background: #001124;
-
+    background: #171a21;
+    padding-bottom: 10px;
 }
 
 
@@ -270,6 +278,19 @@ ul {
     font-size: 17px;
 }
 
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
 .container {
     float:left;
@@ -288,8 +309,8 @@ ul {
 
 .button {
     background: #0e86ca;
-    border: solid 1px #00aeff;
-    color: #fff;
+    border: none;
+    color: #98daff;
     cursor: pointer;
     display: inline-block;
     letter-spacing: 1px;
@@ -300,6 +321,18 @@ ul {
     padding: 7px 20px;
     text-align: center;
     font-size: 19px;
+}
+
+.button:hover, .button:focus {
+    color:#fff;
+}
+
+.shadow {
+    box-shadow: 0 0 5px #000000;
+}
+
+.max-width {
+    width:100%;
 }
 
 .grid {
@@ -386,7 +419,9 @@ input::selection {
 
 
 
-
+section {
+    position: relative;
+}
 
 
 

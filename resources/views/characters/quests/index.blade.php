@@ -11,7 +11,7 @@
         <article>
            @foreach($quests as $quest)
                @if($quest->required_level <= $character->level_id)
-               <li><a href="">{{$quest->title}} - Level {{$quest->required_level}} - Start Quest</a></li> 
+               <li><a href="">{{$quest->title}} - Level {{$quest->required_level}} - Start Quest</a></li>
                 @else
                 <li>{{$quest->title}} - Level {{$quest->required_level}} - Too low level</li>
                    @endif

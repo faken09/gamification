@@ -8,49 +8,53 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900"
+          rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-
-
 </head>
 <body>
 
 
-
-<div id="stars" class="wallpaper"></div>
 <div id="app">
     <nav id="navigation">
         <div class="container-inner">
-        <ul>
-            @guest
-            <li class="left">
-                <a href="{{ url('/') }}">
-                    Forside
-                </a>
-            </li>
-
-            <li class="left">
-                <a href="{{ url('/') }}">
-                    Om os
-                </a>
-            </li>
-            <li class="right"><a class="button" href="{{ route('login') }}">{{ __('Log på') }}</a></li>
-            @else
-
-                <li class="right "><a href="{{ route('logout') }}"
-                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Log af') }}</a>
+            <ul>
+                {{-- guest links for user not logged in--}}
+                @guest
+                <li class="left no-padding">
+                    <a href="{{ url('/') }}">
+                        <img style="max-width: 70px" src="{{ asset('img/logo.png') }}">
+                    </a>
                 </li>
-                <li class="right margin-r"><a href="{{ route('home', Auth::user()->name) }}">{{ Auth::user()->name }}</a></li>
-            @if(Auth::user()->role == "admin")
-                <li class="right margin-r"><a href="{{ route('admin.dashboard')}}">Admin dashboard</a></li>
-                @endif
-                <form id="logout-form" action="{{ route('logout') }}" method="POST"> @csrf </form>
 
-            @endguest
-        </ul>
-            </div>
+                <li class="right">
+                    <a href="{{ url('/') }}">
+                        Community
+                    </a>
+                </li>
+                <li class="right">
+                    <a href="{{ url('/') }}">
+                        Catalog
+                    </a>
+                </li>
+
+                <li class="right no-padding margin-r"><a class="button no-margin" href="{{ route('login') }}">{{ __('Log på') }}</a></li>
+                {{-- if user is logged in then show user links --}}
+                @else
+                <li class="right "><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Log af') }}</a></li> {{-- Logout link for user --}}
+                <li class="right margin-r"><a href="{{ route('home', Auth::user()->name) }}">{{ Auth::user()->name }}</a></li> {{-- User page link --}}
+                <li class="right margin-r"><a href="#">Quests</a></li>  {{-- Quest link --}}
+                {{-- If user have role Admin then show admin navigations links --}}
+                @if(Auth::user()->role == "admin")
+                    <li class="right margin-r"><a href="{{ route('admin.dashboard')}}">Admin controlpanel</a></li>
+                @endif
+                {{-- Admin navigations links end --}}
+                <form id="logout-form" action="{{ route('logout') }}" method="POST"> @csrf </form>
+                @endguest
+            </ul>
+        </div>
     </nav>
 
     <main class="container">
