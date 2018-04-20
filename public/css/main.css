@@ -444,8 +444,8 @@ section {
     color: #fff;
 }
 
-.forms form { padding: 30px; }
-#signup { display: none; }
+.forms form { padding: 1.5rem; }
+#login { display: none; }
 .forms .tab-group {
     list-style: none;
     padding: 0;
@@ -459,7 +459,7 @@ section {
 .forms .tab-group li a {
     display: block;
     text-decoration: none;
-    padding: 15px;
+    padding: 1rem;
     color: #888;
     font-size: 16px;
     float: left;
