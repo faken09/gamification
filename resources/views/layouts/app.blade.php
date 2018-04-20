@@ -29,12 +29,12 @@
                     </a>
                 </li>
 
-                <li class="right">
+                <li class="left">
                     <a href="{{ url('/') }}">
                         Community
                     </a>
                 </li>
-                <li class="right">
+                <li class="left">
                     <a href="{{ url('/') }}">
                         Catalog
                     </a>

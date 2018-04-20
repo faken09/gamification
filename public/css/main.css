@@ -140,7 +140,11 @@ p {
 
 a {
     text-decoration: none;
-    color: #b8b6b4;
+    color: #e5e4dc;
+}
+
+a:hover, a:focus {
+    color:#fff !important;
 }
 
 .grid a:hover img {
@@ -308,7 +312,7 @@ ul {
 .button {
     background: #0e86ca;
     border: none;
-    color: #98daff;
+    color: #e5e4dc;
     cursor: pointer;
     display: inline-block;
     letter-spacing: 1px;
@@ -436,14 +440,10 @@ section {
     position: relative;
     padding: 0;
 }
-.forms h1 {
+.forms h2 {
     color: #fff;
-    text-align: center;
 }
 
-.forms p {
-    text-align: center;
-}
 .forms form { padding: 30px; }
 #signup { display: none; }
 .forms .tab-group {
@@ -489,13 +489,16 @@ section {
     border-color: #2e5ed7;
 }
 .forms label {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: normal;
-    color: #666;
+    color: #e5e4dc;
     margin-bottom: 5px;
     display: block;
 }
-
+.input-field a {
+    color:#e5e4dc;
+    font-size: 15px;
+}
 
 #login, #signup {
     background: #15385a;

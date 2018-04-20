@@ -8,7 +8,8 @@
                 <div class="grid-item">
                     <img style="width:100%" src="{{ asset('img/fp.png') }}">
 
-                    <h1>Motivate yourself to achieve your goals.</h1>
+                    <h1>Learn to code</h1>
+                    <p>The demand for coding skills is skyrocketing, and not just for developers — programming is playing a bigger role in every career path. Add the right technical skills to your résumé so you can pursue a more fulfilling career.</p>
                 </div>
                 <div class="grid-item">
                     <div id="register-form">
@@ -19,7 +20,7 @@
 
                             </ul>
                             <form method="POST" id="login" action="{{ route('login') }}">
-                                <h1>Log på</h1>
+                                <h2>Log på</h2>
                                 <div class="input-field">
 
                                     @csrf
@@ -63,7 +64,7 @@
                                 </div>
                             </form>
                             <form method="POST" id="signup" action="{{ route('register') }}">
-                                <h1> Opret en ny konto</h1>
+                                <h2>Opret en ny konto</h2>
 
                                 <p>Det er gratis, og det bliver det ved med at være.</p>
 
