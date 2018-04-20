@@ -123,10 +123,12 @@ h1, h2, h3, h4, h5, p {
 
 h1 {
     font-size: 2.2em;
+     letter-spacing: 2px;
 }
 
 h2 {
     font-size: 1.4rem;
+    font-weight: normal;
 }
 
 
@@ -310,14 +312,12 @@ ul {
 }
 
 .button {
-    background: #0e86ca;
+    background: #3584bd;
     border: none;
-    color: #e5e4dc;
     cursor: pointer;
     display: inline-block;
     letter-spacing: 1px;
     position: relative;
-    text-shadow: 0 1px 2px rgba(0,0,0,.5);
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 7px 20px;
@@ -386,7 +386,7 @@ form {
     font-size: 15px;
     line-height: 20px;
     border: 1px solid rgba(255,255,255,0.3);
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba( 0, 0, 0, 0.4 );
     color: rgba(255,255,255,0.7);
     border-radius: 2px;
     width: 100%;
@@ -394,6 +394,7 @@ form {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    border-radius: 2px;
 
 }
 
