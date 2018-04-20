@@ -40,7 +40,7 @@
         <button class="button" type="submit">
             {{ __('Login') }}
         </button>
-<br />
+        <br />
         <a href="{{ route('password.request') }}">
             {{ __('Forgot Your Password?') }}
         </a>

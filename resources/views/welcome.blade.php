@@ -12,57 +12,109 @@
                 </div>
                 <div class="grid-item">
                     <div id="register-form">
-                        <h1> Opret en ny konto</h1>
+                        <div class="forms">
+                            <ul class="tab-group">
+                                <li class="tab"><a href="#signup">Sign Up</a></li>
+                                <li class="tab active"><a href="#login">Log In</a></li>
 
-                        <p>Det er gratis, og det bliver det ved med at være.</p>
+                            </ul>
+                            <form method="POST" id="login" action="{{ route('login') }}">
+                                <h1>Log på</h1>
+                                <div class="input-field">
 
-                        <form method="POST" action="{{ route('register') }}">
-                            @csrf
+                                    @csrf
 
-                            @if ($errors->has('name'))
-                                <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                            @endif
+                                    <input placeholder="Email" id="email" type="email" class="input-st{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
+                                           value="{{ old('email') }}" required autofocus>
 
-                            <input placeholder="Navn" id="name" type="text"
-                                   class="input-st {{ $errors->has('name') ? ' is-invalid' : '' }}" name="name"
-                                   value="{{ old('name') }}" required autofocus>
-
-
-                            @if ($errors->has('email'))
-                                <span class="invalid-feedback">
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                            @endif
-
-                            <input placeholder="Email" id="email" type="email"
-                                   class=" input-st{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                   name="email"
-                                   value="{{ old('email') }}" required>
+                                    @endif
 
 
-                            @if ($errors->has('password'))
-                                <span class="invalid-feedback">
+                                    <input placeholder="Adgangskode" id="password" type="password" class="input-st{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                           name="password" required>
+
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                            @endif
+                                    @endif
 
 
-                            <input placeholder="Ny adgangskode" id="password" type="password"
-                                   class=" input-st{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                   name="password" required>
 
 
-                            <input class="input-st" placeholder="Adgangskode igen" id="password-confirm" type="password"
-                                   name="password_confirmation" required>
+                                    <label class="container-check">Husk mig
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
 
-                            <br/>
-                            <button class="button" type="submit">
-                                {{ __('Opret konto') }}
-                            </button>
 
-                        </form>
+                                    <button class="button" type="submit">
+                                        {{ __('Login') }}
+                                    </button>
+                                    <br />
+                                    <a href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+
+                                </div>
+                            </form>
+                            <form method="POST" id="signup" action="{{ route('register') }}">
+                                <h1> Opret en ny konto</h1>
+
+                                <p>Det er gratis, og det bliver det ved med at være.</p>
+
+                                <div class="input-field">
+                                    @csrf
+
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                    @endif
+
+                                    <input placeholder="Navn" id="name" type="text"
+                                           class="input-st {{ $errors->has('name') ? ' is-invalid' : '' }}" name="name"
+                                           value="{{ old('name') }}" required autofocus>
+
+
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+
+                                    <input placeholder="Email" id="email" type="email"
+                                           class=" input-st{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                           name="email"
+                                           value="{{ old('email') }}" required>
+
+
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                    @endif
+
+
+                                    <input placeholder="Ny adgangskode" id="password" type="password"
+                                           class=" input-st{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                           name="password" required>
+
+
+                                    <input class="input-st" placeholder="Adgangskode igen" id="password-confirm" type="password"
+                                           name="password_confirmation" required>
+
+                                    <br/>
+                                    <button class="button" type="submit">
+                                        {{ __('Opret konto') }}
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -72,7 +124,7 @@
 
     <section style="width:100%; float:left; padding-top: 40px;
     padding-bottom: 40px;
-    margin-bottom: 20px;">
+    margin-bottom: 20px; background: linear-gradient( to bottom, rgb(31, 49, 68) 5%, rgba(42,71,94,0.0) 70%);">
         <div id="stars" class="wallpaper"></div>
         <div class="container-inner">
             <div class="grid">
@@ -109,7 +161,7 @@
     </section>
 
     <section
-            style="width:100%; float:left;     background: linear-gradient( to bottom, rgba(42,71,94,1.0) 5%, rgba(42,71,94,0.0) 70%);">
+            style="width:100%; float:left;     background: linear-gradient( to bottom, rgb(31, 49, 68) 5%, rgba(42,71,94,0.0) 70%);">
         <div class="container-inner">
 
             <div style="padding:40px; text-align: center">
@@ -125,4 +177,7 @@
             </div>
         </div>
     </section>
+
+
+
 @endsection

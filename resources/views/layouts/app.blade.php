@@ -39,8 +39,6 @@
                         Catalog
                     </a>
                 </li>
-
-                <li class="right no-padding margin-r"><a class="button no-margin" href="{{ route('login') }}">{{ __('Log på') }}</a></li>
                 {{-- if user is logged in then show user links --}}
                 @else
                 <li class="right "><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Log af') }}</a></li> {{-- Logout link for user --}}
@@ -68,6 +66,23 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="{{ asset('js/vendor/jquery-3.2.1.min.js') }}"><\/script>')</script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.tab a').on('click', function (e) {
+            e.preventDefault();
+
+            $(this).parent().addClass('active');
+            $(this).parent().siblings().removeClass('active');
+
+            var href = $(this).attr('href');
+            $('.forms > form').hide();
+            $(href).fadeIn(500);
+        });
+    });
+</script>
 
 <link src="{{ asset('js/plugins.js') }}">
 <link src="{{ asset('js/main.js') }}">
