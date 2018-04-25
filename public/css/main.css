@@ -265,7 +265,7 @@ ul {
     bottom: 0px;
 }
 
-#stars {
+#cluster-bg {
     background-attachment: fixed;
     background-image: url(../img/cluster_bg.png);
     background-repeat: no-repeat;

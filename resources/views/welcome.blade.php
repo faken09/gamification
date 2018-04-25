@@ -135,7 +135,7 @@
     <section style="padding-top: 40px;
     padding-bottom: 40px;
     margin-bottom: 20px; background: linear-gradient( to bottom, rgb(31, 49, 68) 5%, rgba(42,71,94,0.0) 70%);">
-        <div id="stars" class="wallpaper"></div>
+        <div id="cluster-bg" class="wallpaper"></div>
         <div class="container-inner">
             <div class="grid">
                 <div class="grid-item">
