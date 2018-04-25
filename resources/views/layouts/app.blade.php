@@ -23,13 +23,17 @@
             <ul>
                 {{-- guest links for user not logged in--}}
                 @guest
-
                 <li class="left">
+                    <a href="{{ url('/') }}">
+                        <img src="{{ asset('img/logo.png') }}">
+                    </a>
+                </li>
+                <li class="right">
                     <a href="{{ url('/') }}">
                         Community
                     </a>
                 </li>
-                <li class="left">
+                <li class="right">
                     <a href="{{ url('/') }}">
                         Catalog
                     </a>

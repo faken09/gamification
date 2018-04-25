@@ -1,14 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-    <section>
+    <section style="padding-bottom: 40px;">
         <div class="container-inner">
+
+                <div style="padding:80px; text-align: center">
+
+                    <h1>Don't just watch, join in</h1>
+
+                    <p>Welcome to a community where millions of people and thousands of interests collide in a beautiful explosion of video games, pop culture, and conversation.</p>
+
+
+                </div>
 
             <div class="grid">
                 <div class="grid-item">
                     <img style="width:100%" src="{{ asset('img/fp.png') }}">
 
-                    <h1>Learn to code</h1>
+                    <h2>Learn to code</h2>
                     <p>The demand for coding skills is skyrocketing, and not just for developers — programming is playing a bigger role in every career path. Add the right technical skills to your résumé so you can pursue a more fulfilling career.</p>
                 </div>
                 <div class="grid-item">
@@ -53,12 +62,12 @@
                                     </label>
 
 
-                                    <button class="button" type="submit">
+                                    <button class="button btn-big" type="submit">
                                         {{ __('Login') }}
                                     </button>
                                     <br />
                                     <a href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('I forgot my username or password.') }}
                                     </a>
 
                                 </div>
@@ -110,7 +119,7 @@
                                            name="password_confirmation" required>
 
                                     <br/>
-                                    <button class="button" type="submit">
+                                    <button class="button btn-big" type="submit">
                                         {{ __('Opret konto') }}
                                     </button>
                                 </div>
@@ -123,7 +132,7 @@
         </div>
     </section>
 
-    <section style="width:100%; float:left; padding-top: 40px;
+    <section style="padding-top: 40px;
     padding-bottom: 40px;
     margin-bottom: 20px; background: linear-gradient( to bottom, rgb(31, 49, 68) 5%, rgba(42,71,94,0.0) 70%);">
         <div id="stars" class="wallpaper"></div>
@@ -140,7 +149,7 @@
             </div>
         </div>
     </section>
-    <section style="width:100%; float:left;">
+    <section>
 
         <div class="container-inner">
 
@@ -162,7 +171,7 @@
     </section>
 
     <section
-            style="width:100%; float:left;     background: linear-gradient( to bottom, rgb(31, 49, 68) 5%, rgba(42,71,94,0.0) 70%);">
+            style="background: linear-gradient( to bottom, rgb(31, 49, 68) 5%, rgba(42,71,94,0.0) 70%);">
         <div class="container-inner">
 
             <div style="padding:40px; text-align: center">

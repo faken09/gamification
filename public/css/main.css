@@ -12,7 +12,8 @@
 
 html {
     color: #fff;
-    font-size: 1em;
+    font-size: 17px;
+    font-weight: 300;
     line-height: 1.4;
 }
 
@@ -122,13 +123,13 @@ h1, h2, h3, h4, h5, p {
 }
 
 h1 {
-    font-size: 2.2em;
+    font-size: 40px;
+    font-weight: normal;
      letter-spacing: 2px;
 }
 
 h2 {
-    font-size: 1.4rem;
-    font-weight: normal;
+    font-size: 25px;
 }
 
 
@@ -137,7 +138,8 @@ h4 {
 }
 
 p {
-    color: #ccc;
+    color: #c1c1c1;
+    font-weight: 300;
 }
 
 a {
@@ -149,6 +151,11 @@ a:hover, a:focus {
     color:#fff !important;
 }
 
+section {
+    float:left;
+    width:100%;
+}
+
 .grid a:hover img {
     box-shadow:  0 0 5px #35809f;
 }
@@ -156,6 +163,7 @@ a:hover, a:focus {
 ul {
     list-style: none;
     -webkit-padding-start: 0px;
+    margin: 0px;
 }
 
 
@@ -268,8 +276,9 @@ ul {
 #navigation {
     float: left;
     width: 100%;
-    background: #171a21;
-    padding-bottom: 10px;
+    background: #2f4963;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 
@@ -280,6 +289,11 @@ ul {
 #navigation ul li {
     padding:10px;
     font-size: 15px;
+}
+
+#navigation a {
+    font-size: 17px;
+    font-weight: 300;
 }
 
 .video-container {
@@ -299,7 +313,6 @@ ul {
 .container {
     float:left;
     width:100%;
-    margin-top: 40px;
 }
 
 
@@ -323,6 +336,15 @@ ul {
     padding: 7px 20px;
     text-align: center;
     font-size: 15px;
+}
+
+.btn-big {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
 }
 
 .button:hover, .button:focus {
@@ -399,17 +421,17 @@ form {
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: rgba(255, 255, 255, 0.5);
+    color: #c1c1c1;
     opacity: 1; /* Firefox */
 
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: rgba(255, 255, 255, 0.5);
+    color: #c1c1c1;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-    color: rgba(255, 255, 255, 0.5);
+    color: #c1c1c1;
 }
 
 input::selection {
@@ -435,7 +457,6 @@ section {
 /* Signup and login tabs*/
 
 .forms {
-    margin: 30px auto;
     max-width: 500px;
     overflow: hidden;
     position: relative;
@@ -462,7 +483,8 @@ section {
     text-decoration: none;
     padding: 1rem;
     color: #888;
-    font-size: 16px;
+    font-size: 17px;
+    font-weight: 300;
     float: left;
     width: 50%;
     text-align: center;
@@ -473,11 +495,11 @@ section {
     transition: all 0.4s ease-in-out;
 }
 .forms .tab-group li a:hover {
-    background: #15385a;
+    background: #2f4963;
     color: #fff;
 }
 .forms .tab-group .active a {
-    background: #15385a;
+    background: #2f4963;
     color: #fff;
 }
 
@@ -487,22 +509,24 @@ section {
 
 .forms input:focus {
     outline: 0;
-    border-color: #2e5ed7;
+    border-color: #3a9dff;
 }
 .forms label {
-    font-size: 15px;
-    font-weight: normal;
-    color: #e5e4dc;
+    font-size: 17px;
+    font-weight: 300;
+    color: #c1c1c1;
     margin-bottom: 5px;
     display: block;
 }
 .input-field a {
-    color:#e5e4dc;
-    font-size: 15px;
+    color: #96ccf3;
+    font-size: 17px;
+    font-weight: 300;
+
 }
 
 #login, #signup {
-    background: #15385a;
+    background: #2f4963;
 }
 
 
