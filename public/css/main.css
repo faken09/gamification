@@ -11,7 +11,7 @@
    ========================================================================== */
 
 html {
-    color: #fff;
+    color: #c1c1c1;
     font-size: 17px;
     font-weight: 300;
     line-height: 1.4;
@@ -145,6 +145,7 @@ p {
     font-weight: 300;
     margin: 0 !important;
     padding: 0 !important;
+    font-size: 15px;
 }
 
 a {
@@ -160,6 +161,7 @@ section {
     float:left;
     width:100%;
 }
+
 
 .grid a:hover img {
     box-shadow:  0 0 5px #35809f;
@@ -191,6 +193,16 @@ ul {
 
 .no-margin {
     margin:0px !important;
+}
+
+#main-footer {
+    width: 100%;
+    background: #000;
+    float: left;
+    text-align: center;
+    padding: 40px;
+    color: #c1c1c1;
+    font-size: 13px;
 }
 
 .container-check  {
@@ -281,7 +293,6 @@ ul {
 #navigation {
     float: left;
     width: 100%;
-    background: #242F39;
     padding-bottom: 5px;
     padding-top: 5px;
     border-bottom: 5px solid #c2a466;
@@ -333,7 +344,7 @@ ul {
 }
 
 .button {
-    background: #c7ab3f;
+    background: #437db7;
     border: none;
     cursor: pointer;
     display: inline-block;
@@ -349,10 +360,12 @@ ul {
 .btn-big {
     width: 100%;
     padding: 10px;
-    font-size: 20px;
     font-weight: bold;
     color: #fff;
     text-transform: uppercase;
+    border-image: linear-gradient(to bottom,#5689bd 0,#005a82 100%);
+    border: 2px solid transparent;
+    border-color: #5689bd;
 }
 
 .button:hover, .button:focus {
@@ -446,9 +459,6 @@ input::selection {
     background: #037db6;
 }
 
-::selection {
-    background: #19547c;
-}
 
 
 
@@ -517,19 +527,19 @@ section {
 
 .forms input:focus {
     outline: 0;
-    border-color: #3a9dff;
+    border-color: #c2a466;
 }
 .forms label {
-    font-size: 17px;
-    font-weight: 300;
+    font-size: 14px;
+    font-weight: 500;
     color: #c1c1c1;
     margin-bottom: 5px;
     display: block;
 }
 .input-field a {
-    color: #cfb554;
-    font-size: 17px;
-    font-weight: 300;
+    color: #61a7ec;
+    font-size: 14px;
+    font-weight: normal;
 
 }
 

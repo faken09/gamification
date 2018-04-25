@@ -56,7 +56,11 @@
 
     <main class="container">
         @yield('content')
+        <div class="push"></div>
     </main>
+    <footer id="main-footer">
+        © 2018 CodeQuest, Inc. All rights reserved. <br />CodeQuest are trademarks, services marks, or registered trademarks of CodeQuest, Inc.
+    </footer>
 </div>
 
 <!-- Scripts -->

@@ -16,7 +16,7 @@
                 <div class="grid-item">
                     <img style="width:100%" src="{{ asset('img/fp.png') }}">
 
-                    <h2>Start your adventures</h2>
+                    <h2>What is CodeQuest?</h2>
                     <p>Challenge yourself on kata, created by the community to strengthen different skills. Master your current language of choice, or expand your understanding of a new one.</p>
                 </div>
                 <div class="grid-item">
