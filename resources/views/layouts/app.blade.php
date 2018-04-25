@@ -23,7 +23,7 @@
             <ul>
                 {{-- guest links for user not logged in--}}
                 @guest
-                <li class="left">
+                <li class="left" style="margin-top:0px;">
                     <a href="{{ url('/') }}">
                         <img src="{{ asset('img/logo.png') }}">
                     </a>
