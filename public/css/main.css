@@ -110,19 +110,21 @@ html {
 body {
     min-height: 100%;
     font-family: 'Roboto', sans-serif;
-    background-color: #1c2938;
+    background-color: #1C242D;
     overflow-y: scroll;
     overflow-x: hidden;
 
 }
 
-h1, h2, h3, h4, h5, p {
+h1, h2, h3, h4, h5 {
     margin: 0 !important;
     padding: 0 !important;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 h1 {
+    color:#c2a466;
     font-size: 40px;
     font-weight: normal;
      letter-spacing: 2px;
@@ -130,6 +132,7 @@ h1 {
 
 h2 {
     font-size: 25px;
+    color:#c2a466;
 }
 
 
@@ -140,11 +143,13 @@ h4 {
 p {
     color: #c1c1c1;
     font-weight: 300;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 a {
     text-decoration: none;
-    color: #e5e4dc;
+    color: #C4C4C4;
 }
 
 a:hover, a:focus {
@@ -276,9 +281,10 @@ ul {
 #navigation {
     float: left;
     width: 100%;
-    background: #2f4963;
+    background: #242F39;
     padding-bottom: 5px;
     padding-top: 5px;
+    border-bottom: 5px solid #c2a466;
 }
 
 
@@ -327,7 +333,7 @@ ul {
 }
 
 .button {
-    background: #3584bd;
+    background: #c7ab3f;
     border: none;
     cursor: pointer;
     display: inline-block;
@@ -354,7 +360,7 @@ ul {
 }
 
 .shadow {
-    box-shadow: 0 0 5px #000000;
+    border:5px solid #c2a466;
 }
 
 .max-width {
@@ -521,7 +527,7 @@ section {
     display: block;
 }
 .input-field a {
-    color: #96ccf3;
+    color: #cfb554;
     font-size: 17px;
     font-weight: 300;
 

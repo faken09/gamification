@@ -3,12 +3,11 @@
 @section('content')
     <section style="padding-bottom: 40px;">
         <div class="container-inner">
-
                 <div style="padding:80px;     padding-top: 40px; text-align: center">
 
-                    <h1>Don't just watch, join in</h1>
+                    <h2>JOIN THE CodeQuest</h2>
 
-                    <p>Welcome to a community where millions of people and thousands of interests collide in a beautiful explosion of video games, pop culture, and conversation.</p>
+                    <h1>BECOME A LEGENDary coder</h1>
 
 
                 </div>
@@ -17,8 +16,8 @@
                 <div class="grid-item">
                     <img style="width:100%" src="{{ asset('img/fp.png') }}">
 
-                    <h2>Learn to code</h2>
-                    <p>The demand for coding skills is skyrocketing, and not just for developers — programming is playing a bigger role in every career path. Add the right technical skills to your résumé so you can pursue a more fulfilling career.</p>
+                    <h2>Start your adventures</h2>
+                    <p>Challenge yourself on kata, created by the community to strengthen different skills. Master your current language of choice, or expand your understanding of a new one.</p>
                 </div>
                 <div class="grid-item">
                     <div id="register-form">
@@ -29,7 +28,7 @@
 
                             </ul>
                             <form method="POST" id="login" action="{{ route('login') }}">
-                                <h2>Log på</h2>
+                                <b>Log på</b>
                                 <div class="input-field">
 
                                     @csrf
@@ -73,7 +72,7 @@
                                 </div>
                             </form>
                             <form method="POST" id="signup" action="{{ route('register') }}">
-                                <h2>Opret en ny konto</h2>
+                                <b>Opret en ny konto</b>
 
                                 <p>Det er gratis, og det bliver det ved med at være.</p>
 
