@@ -4,7 +4,7 @@
     <section style="padding-bottom: 40px;">
         <div class="container-inner">
 
-                <div style="padding:80px; text-align: center">
+                <div style="padding:80px;     padding-top: 40px; text-align: center">
 
                     <h1>Don't just watch, join in</h1>
 
