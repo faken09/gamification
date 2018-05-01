@@ -162,6 +162,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // An implementation of an Achievement System in Laravel
+        Gstt\Achievements\AchievementsServiceProvider::class,
+
     ],
 
     /*

@@ -158,8 +158,11 @@ a:hover, a:focus {
 }
 
 section {
-    float:left;
     width:100%;
+}
+
+b {
+    color:#fff;
 }
 
 
@@ -218,6 +221,7 @@ ul {
     user-select: none;
     margin-top: 10px;
 }
+
 
 /* Hide the browser's default checkbox */
 .container-check input {

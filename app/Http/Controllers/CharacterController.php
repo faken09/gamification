@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Achievements\UserMadeACharacter;
 use App\Character;
 use App\Http\Requests\CharacterRequest;
 use App\Quest;
@@ -10,6 +12,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+
+
 
 class CharacterController extends Controller
 {
@@ -80,6 +84,8 @@ class CharacterController extends Controller
             $character->image = $imageFilename;
             $character->image_sm = $imageFilename_sm;
 
+            // Achievement for user creating a character!
+            Auth::user()->unlock(new UserMadeACharacter());
 
             if ($character->save()) {
                 return redirect()->route('character.show', ['slug' => $character->name])->with('flash_message', $character->name . ' er blevet oprettet!');
