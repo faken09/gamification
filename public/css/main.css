@@ -534,10 +534,11 @@ section {
     border-color: #c2a466;
 }
 .forms label {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
-    color: #c1c1c1;
+    color: #fff;
     margin-bottom: 5px;
+    font-weight: 300;
     display: block;
 }
 .input-field a {

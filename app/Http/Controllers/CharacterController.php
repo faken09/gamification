@@ -85,13 +85,13 @@ class CharacterController extends Controller
             $character->image_sm = $imageFilename_sm;
 
 
-
-
             if ($character->save()) {
+
+
                 // Achievement for user creating a character!
-                // Check and see if achivement has been unlocked else unlock it !
                 if(Auth::user()->achievementStatus(new UserMadeACharacter())->first()->unlocked_at == null) {
                     // unlocking achivement for user
+
                     Auth::user()->unlock(new UserMadeACharacter());
                     return redirect()->route('character.show', ['slug' => $character->name])->with('achivement', 'User got a new Achivement');
 
