@@ -61,7 +61,7 @@
 
 
     @if(session('achivement'))
-        <?php $achivement = Auth::user()->achievements()->first();?>
+        <?php $achivement = Auth::user()->achievements()->whereNotNull('unlocked_at')->orderBy('unlocked_at','DESC')->first();?>
     <div class="snack-wrap">
         <input type="checkbox" class="snackclose animated" id="close"/><label class="snacklable animated" for="close"></label>
         <div class="snackbar animated">
