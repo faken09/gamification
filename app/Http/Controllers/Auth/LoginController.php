@@ -68,6 +68,8 @@ class LoginController extends Controller
             ]);
         }
 
+
+
         if(isset($request->remember)) {
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
                 // Authentication passed...
