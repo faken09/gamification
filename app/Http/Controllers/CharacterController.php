@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Achievements\UserMadeACharacter;
+
 use App\Character;
 use App\Http\Requests\CharacterRequest;
 use App\Quest;
@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
-
+use App\Achievements\UserMadeACharacter;
 
 class CharacterController extends Controller
 {
@@ -84,11 +84,21 @@ class CharacterController extends Controller
             $character->image = $imageFilename;
             $character->image_sm = $imageFilename_sm;
 
-            // Achievement for user creating a character!
-            Auth::user()->unlock(new UserMadeACharacter());
+
+
 
             if ($character->save()) {
-                return redirect()->route('character.show', ['slug' => $character->name])->with('flash_message', $character->name . ' er blevet oprettet!');
+                // Achievement for user creating a character!
+                // Check and see if achivement has been unlocked else unlock it !
+                if(Auth::user()->achievementStatus(new UserMadeACharacter())->first()->unlocked_at == null) {
+                    // unlocking achivement for user
+                    Auth::user()->unlock(new UserMadeACharacter());
+                    return redirect()->route('character.show', ['slug' => $character->name])->with('achivement', 'User got a new Achivement');
+
+                } else {
+                    return redirect()->route('character.show', ['slug' => $character->name])->with('flash_message', $character->name . ' er blevet oprettet!');
+                }
+
             }
         }
 

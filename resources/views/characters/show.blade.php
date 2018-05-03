@@ -9,6 +9,8 @@
             <p><a href="{{route('characters.quests.index', ['name'=>$character->name])}}">Quests</a></p>
         </header>
 
+
+
         <article>
                 <img src="{{asset(env('STORAGE_DISK_PATH')."/characters/".$character->image_sm)}}"> <br/>
                 <b>Character:</b>

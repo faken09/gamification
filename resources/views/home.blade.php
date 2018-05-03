@@ -8,6 +8,8 @@
                 {{ session('status') }}
             </div>
         @endif
+
+
         {{-- if user own profile page --}}
         @if(auth::user()->id == $user->id)
             <h2>Welcome {{$user->name}}</h2>
@@ -24,6 +26,7 @@
                 <br>
             @endforeach
         @endif
+
 
     </div>
 @endsection

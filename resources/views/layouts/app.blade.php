@@ -58,6 +58,24 @@
         @yield('content')
         <div class="push"></div>
     </main>
+
+
+    @if(session('achivement'))
+        <?php $achivement = Auth::user()->achievements()->where('unlocked_at', '>=', Carbon\Carbon::now())->first();?>
+    <div class="snack-wrap">
+        <input type="checkbox" class="snackclose animated" id="close"/><label class="snacklable animated" for="close"></label>
+        <div class="snackbar animated">
+            <div id="icon" style="float:left">
+                <img style="margin-right: 10px;" src="{{ asset('img/'.$achivement->details->icon) }}">
+            </div>
+            <div id="info">
+            <p><b>   {{$achivement->details->name }}</b>   <br />
+                {{$achivement->details->description }}</p>
+            </div>
+        </div>
+    </div>
+    @endif
+
     <footer id="main-footer">
         © 2018 CodeQuest, Inc. All rights reserved. <br />CodeQuest are trademarks, services marks, or registered trademarks of CodeQuest, Inc.
     </footer>
