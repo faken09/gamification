@@ -14,7 +14,7 @@ class UserMadeAnAccount extends Achievement
     /*
      * A small description for the achievement
      */
-    public $description = "Congratulations! You have made an account!";
+    public $description = "Making your account!";
 
     public $points = 50;
 

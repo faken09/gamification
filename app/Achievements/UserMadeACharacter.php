@@ -14,7 +14,7 @@ class UserMadeACharacter extends Achievement
     /*
      * A small description for the achievement
      */
-    public $description = "Congratulations! You have made your first Character!";
+    public $description = "Create your first character";
 
     public $points = 50;
 
