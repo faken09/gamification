@@ -56,7 +56,6 @@
 
     <main class="container">
         @yield('content')
-        <div class="push"></div>
     </main>
 
 
@@ -76,10 +75,11 @@
     </div>
     @endif
 
-    <footer id="main-footer">
-        © 2018 CodeQuest, Inc. All rights reserved. <br />CodeQuest are trademarks, services marks, or registered trademarks of CodeQuest, Inc.
-    </footer>
 </div>
+
+<footer id="footer">
+    © 2018 CodeQuest, Inc. All rights reserved. <br />CodeQuest are trademarks, services marks, or registered trademarks of CodeQuest, Inc.
+</footer>
 
 <!-- Scripts -->
 <link src="{{ asset('js/vendor/modernizr-3.5.0.min.js') }}">

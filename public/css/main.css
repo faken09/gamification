@@ -103,8 +103,6 @@ figure {
 
 html {
     height: 100%;
-
-
 }
 
 body {
@@ -115,6 +113,32 @@ body {
     overflow-x: hidden;
 
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+#app {
+    min-height: 100%;
+}
+
+
+.container {
+    padding: 20px;
+    padding-bottom: 117px;
+}
+#footer {
+
+    margin-top: -117px;
+    width: 100%;
+    background: #000;
+    float: left;
+    text-align: center;
+    padding:40px;
+    color: #c1c1c1;
+    font-size: 13px;
+}
+
 
 h1, h2, h3, h4, h5 {
     margin: 0 !important;
@@ -198,15 +222,6 @@ ul {
     margin:0px !important;
 }
 
-#main-footer {
-    width: 100%;
-    background: #000;
-    float: left;
-    text-align: center;
-    padding: 40px;
-    color: #c1c1c1;
-    font-size: 13px;
-}
 
 .container-check  {
     display: block;
