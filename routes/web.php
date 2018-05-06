@@ -17,6 +17,8 @@
 
 // Registration Routes...
 Route::group(['middleware' => 'guest'], function () {
+
+
 Route::get('/', function () { return view('welcome'); });
 });
 

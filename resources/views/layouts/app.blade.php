@@ -19,15 +19,15 @@
 
 <div id="app">
     <nav id="navigation">
-        <div class="container-inner">
-            <ul>
+        <div class="{{ Request::is('/') ? 'container-inner' : '' }}">
+            <ul class="{{ !Request::is('/') ? 'mg' : '' }}">
                 {{-- guest links for user not logged in--}}
-                @guest
                 <li class="left" style="margin-top:0px;">
                     <a href="{{ url('/') }}">
                         <img src="{{ asset('img/logo.png') }}">
                     </a>
                 </li>
+                @guest
                 <li class="right">
                     <a href="{{ url('/') }}">
                         Community
@@ -41,8 +41,8 @@
                 {{-- if user is logged in then show user links --}}
                 @else
                 <li class="right "><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Log af') }}</a></li> {{-- Logout link for user --}}
-                <li class="right margin-r"><a href="{{ route('home', Auth::user()->name) }}">{{ Auth::user()->name }}</a></li> {{-- User page link --}}
-                <li class="right margin-r"><a href="#">Quests</a></li>  {{-- Quest link --}}
+                <li class="right"><a href="{{ route('home', Auth::user()->name) }}">{{ Auth::user()->name }}</a></li> {{-- User page link --}}
+                <li class="right"><a href="#">Quests</a></li>  {{-- Quest link --}}
                 {{-- If user have role Admin then show admin navigations links --}}
                 @if(Auth::user()->role == "admin")
                     <li class="right margin-r"><a href="{{ route('admin.dashboard')}}">Admin controlpanel</a></li>
