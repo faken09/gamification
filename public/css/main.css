@@ -332,7 +332,7 @@ ul {
     margin-right: 30px;
 }
 
-#navigation .right:last-child {
+#navigation .right:first-of-type {
     margin-right: 0px;
 }
 
