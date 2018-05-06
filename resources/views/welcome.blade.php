@@ -3,7 +3,7 @@
 @section('content')
     <section style="padding-bottom: 40px;">
         <div class="container-inner">
-                <div style="padding:80px;     padding-top: 40px; text-align: center">
+                <div class="welcome">
 
                     <h2>JOIN THE CodeQuest</h2>
 
