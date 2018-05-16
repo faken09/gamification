@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <div id="headlight">
+        <div class="container-main-inner">
     <section id="profile">
         <div class="profile-avatar">
             <div class="avatar">
@@ -12,7 +13,7 @@
                     {{$user->name}}
                 </div>
                 <div class="profile-type">
-                    Player
+                    Level 1
                 </div>
             </div>
         </div>
@@ -36,9 +37,10 @@
                 </div>
             </div>
         </div>
+        </div>
     </section>
-
-    <div class="container-inner">
+    </div>
+    <div class="container-main-inner">
 
         @if (session('status'))
             <div class="alert alert-success">
@@ -50,19 +52,7 @@
         {{-- if user own profile page --}}
         @if(auth::user()->id == $user->id)
             <h2>Welcome {{$user->name}}</h2>
-
-                <div class="grid home-grid">
-                    <div class="grid-item">
-                        <a href="{{ route('character.create') }}"><img src="{{ asset('img/cc1.png') }}"></a>
-                        </div>
-                    <div class="grid-item">
-                        <a href="{{ route('character.create') }}"><img src="{{ asset('img/cc1.png') }}"></a>
-                    </div>
-                    <div class="grid-item">
-                        <a href="{{ route('character.create') }}"><img src="{{ asset('img/cc1.png') }}"></a>
-                    </div>
-                    </div>
-
+                <a href="{{ route('character.create') }}">Create character</a>
                 <h3>List of characters</h3>
                 @if($user->characters()->first())
                     @foreach($user->characters()->get() as $character)
@@ -78,12 +68,9 @@
         @endif
 
             <div id="userAchivement">
-                <h5>Achivement</h5>
+                <h5>Latest Achivement</h5>
                 @foreach($user->achievements()->whereNotNull('unlocked_at')->get() as $achivement)
                     <img title="{{$achivement->details->name}} &#013;{{$achivement->details->description}}"  alt="{{$achivement->details->name}}" src="{{ asset('img/'.$achivement->details->icon) }}">
-                @endforeach
-                @foreach($user->achievements()->whereNull('unlocked_at')->get() as $achivement)
-                    <img  title="{{$achivement->details->name}} &#013;{{$achivement->details->description}}"  style="opacity: 0.2" alt="{{$achivement->details->name}}" src="{{ asset('img/'.$achivement->details->icon) }}">
                 @endforeach
             </div>
 

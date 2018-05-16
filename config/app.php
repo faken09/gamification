@@ -165,6 +165,8 @@ return [
         // An implementation of an Achievement System in Laravel
         Gstt\Achievements\AchievementsServiceProvider::class,
 
+        DevDojo\Chatter\ChatterServiceProvider::class,
+
     ],
 
     /*

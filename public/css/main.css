@@ -107,7 +107,7 @@ html {
 
 body {
     min-height: 100%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif !important;
     background-color: #1C242D;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -122,8 +122,15 @@ html, body {
     min-height: 100%;
 }
 
+#chatter_header {
+    background: #1d3042 !important;
+}
 
-.container {
+#chatter ul.discussions li a.discussion_list .chatter_post_actions p, #chatter ul.discussions li .chatter_posts .chatter_post_actions p {
+    margin-right: 10px !important;
+}
+
+.container-main {
     padding-bottom: 117px;
 }
 #footer {
@@ -138,6 +145,10 @@ html, body {
     font-size: 13px;
 }
 
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 0 !important;
+}
 
 h1, h2, h3, h4, h5 {
     margin: 0 !important;
@@ -222,6 +233,9 @@ ul {
     margin:0px !important;
 }
 
+b, strong {
+    font-weight: 700 !important;
+}
 
 .container-check  {
     display: block;
@@ -315,6 +329,9 @@ ul {
     padding-bottom: 5px;
     padding-top: 5px;
     background: #2f4963;
+    border-bottom: 1px solid #1c242d;
+    z-index: 100;
+    position: relative;
 }
 
 #navigation .mg {
@@ -322,6 +339,12 @@ ul {
     margin-right: 20px;
 }
 
+#navigation a {
+
+text-decoration: none;
+    color: #C4C4C4;
+
+}
 
 #navigation li {
     display: inline;
@@ -360,13 +383,13 @@ ul {
     height: 100%;
 }
 
-.container {
+.container-main  {
     float:left;
     width:100%;
 }
 
 
-.container-inner {
+.container-main-inner {
     max-width: 980px;
     margin-right: auto;
     margin-left: auto;
@@ -419,17 +442,6 @@ ul {
     perspective: 1000px;
 }
 
-.home-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(306px, 1fr));
-    grid-gap: 20px;
-    align-items: stretch;
-    perspective: 1000px;
-}
-
-.home-grid img {
-    width:306px;
-}
 
 @media (max-width: 600px) {
     .grid {
@@ -458,8 +470,6 @@ ul {
 }
 
 form {
-    float:left;
-    width:100%;
     text-align: left;
 }
 
@@ -664,16 +674,22 @@ section {
     100% {bottom:-200px; }
 }
 
+#headlight {
+    background-color: #1d3042;
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-bottom: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 4px solid #c2a466;
+}
+
 
 #profile {
-    height: 12.5rem;
-    display: flex;
-    justify-content: space-between;
-    background-color: #1d3042;
-    align-items: center;
     position: relative;
-    margin-bottom: 40px;
-    color:#fff;
+    color: #fff;
+    FLOAT: LEFT;
 }
 
 .profile-container {
@@ -681,24 +697,18 @@ section {
     flex-direction: column;
     justify-content: center;
     margin-right: 20px;
+    margin-top: 4px;
+    border-radius: 2px;
+    padding: 5px;
 }
 
 .profile-avatar {
-    margin-left: 8.5rem;
-    height: 5rem;
-    width: 80%;
-    display: flex;
-    z-index: 1;
+    float: left;
+    background: #2f4963;
 }
 
 .profile-achivement {
-    margin-right: 8.5rem;
-    height: 5rem;
-    width: 20%;
-    max-width: 15rem;
-    display: flex;
-    z-index: 1;
-    justify-content: space-between;
+    float: right;
 }
 
 .achivement-count{
@@ -710,57 +720,55 @@ section {
 
 .achivement-label {
     text-align: center;
+    text-align: center;
+    background: #2f4963;
+    padding: 5px;
+}
+
+.avatar {
+    float:left;
 }
 
 .avatar img {
     height: 80px;
     width: 80px;
+    float:left;
 }
 
 .profile-details {
-    display: inline-block;
-    vertical-align: top;
     margin-left: 16px;
+    float:left;
+    margin-top: 1px;
 }
 .profile-name {
     font-size: 2rem;
     line-height: 3rem;
     font-weight: 700;
+    float: left;
+    padding-right: 20px;
 }
 
 .profile-type {
-
+    float: left;
+    clear: both;
 }
 
 @media (max-width: 700px) {
-    .avatar {
-        float: left;
-        width: 80px;
-    }
-    .profile-details {
-        float: left;
-    }
     .profile-avatar {
-        display: none;
+        width:100%;
+        margin-bottom: 20px;
     }
 
     .profile-achivement {
-        height: 5rem;
-        display: block;
+        width: 176px;
         margin: 0 auto;
-        z-index: 1;
-        width: 80%;
-        justify-content: space-between;
-        clear: both;
-        max-width: 300px;
-        text-align: center;
-        padding-top: 25px;
+        float: none;
     }
 
-    #profile {
-        display: block;
-        height:auto;
-        padding-bottom: 20px;
+    .profile-container {
+
+        margin-right: 10px;
+        padding:0px;
     }
 }
 

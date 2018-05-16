@@ -93,9 +93,9 @@ class CharacterController extends Controller
                 if($details->unlocked_at === null) {
                     // unlocking achivement for user for creating an accont
                     Auth::user()->unlock(new UserMadeACharacter());
-                    return redirect()->route('character.show', ['slug' => $character->name])->with('achivement', 'User got a new Achivement');
+                    return redirect()->route('home', ['slug' => Auth::user()->name])->with('achivement', 'User got a new Achivement');
                 } else {
-                    return redirect()->route('character.show', ['slug' => $character->name])->with('flash_message', $character->name . ' er blevet oprettet!');
+                    return redirect()->route('home', ['slug' => Auth::user()->name])->with('flash_message', $character->name . ' er blevet oprettet!');
                 }
 
 

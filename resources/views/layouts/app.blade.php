@@ -11,22 +11,30 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900"
           rel="stylesheet">
     <!-- Styles -->
+
     <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+
+    @if(Request::is('*forums*') )
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        @yield('css')
+    @endif
+
 </head>
 <body>
 
 
 <div id="app">
     <nav id="navigation">
-        <div class="{{ Request::is('/') ? 'container-inner' : '' }}">
-            <ul class="{{ !Request::is('/') ? 'mg' : '' }}">
+        <div class="container-main-inner">
+            <ul>
                 {{-- guest links for user not logged in--}}
                 <li class="left" style="margin-top:0px;">
                     <a href="{{ url('/') }}">
                         <img src="{{ asset('img/logo.png') }}">
                     </a>
                 </li>
+
                 @guest
                 <li class="right">
                     <a href="{{ url('/') }}">
@@ -38,8 +46,13 @@
                         Catalog
                     </a>
                 </li>
+
+                @endguest
+
+
+
                 {{-- if user is logged in then show user links --}}
-                @else
+                @auth
                 <li class="right "><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Log af') }}</a></li> {{-- Logout link for user --}}
                 <li class="right"><a href="{{ route('home', Auth::user()->name) }}">{{ Auth::user()->name }}</a></li> {{-- User page link --}}
                 <li class="right"><a href="#">Quests</a></li>  {{-- Quest link --}}
@@ -49,12 +62,18 @@
                 @endif
                 {{-- Admin navigations links end --}}
                 <form id="logout-form" action="{{ route('logout') }}" method="POST"> @csrf </form>
-                @endguest
+                @endauth
+                <li class="right">
+                    <a href="{{ url('/forums') }}">
+                        Forums
+                    </a>
+                </li>
+
             </ul>
         </div>
     </nav>
 
-    <main class="container">
+    <main class="container-main">
         @yield('content')
     </main>
 
@@ -118,5 +137,10 @@
     ga('send', 'pageview')
 </script>
 <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+@if(Request::is('*forums*') )
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+@yield('js')
+@endif
+
 </body>
 </html>

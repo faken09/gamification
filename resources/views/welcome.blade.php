@@ -2,7 +2,7 @@
 
 @section('content')
     <section style="padding-bottom: 40px;">
-        <div class="container-inner">
+        <div class="container-main-inner">
                 <div class="welcome">
 
                     <h2>JOIN THE CodeQuest</h2>
@@ -135,7 +135,7 @@
     padding-bottom: 40px;
     margin-bottom: 20px; background: linear-gradient( to bottom, rgb(31, 49, 68) 5%, rgba(42,71,94,0.0) 70%);">
         <div id="cluster-bg" class="wallpaper"></div>
-        <div class="container-inner">
+        <div class="container-main-inner">
             <div class="grid">
                 <div class="grid-item">
                     <a href="#"><img class="shadow max-width" src="{{ asset('img/fp2.png') }}"></a>
@@ -150,7 +150,7 @@
     </section>
     <section>
 
-        <div class="container-inner">
+        <div class="container-main-inner">
 
             <div style="padding:40px; text-align: center">
 
@@ -171,7 +171,7 @@
 
     <section
             style="background: linear-gradient( to bottom, rgb(31, 49, 68) 5%, rgba(42,71,94,0.0) 70%);">
-        <div class="container-inner">
+        <div class="container-main-inner">
 
             <div style="padding:40px; text-align: center">
 
