@@ -122,6 +122,10 @@ html, body {
     min-height: 100%;
 }
 
+.chatter-alert p {
+    color:#fff;
+}
+
 #chatter_header {
     background: #1d3042 !important;
 }

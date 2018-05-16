@@ -43,7 +43,7 @@
 
 		@if (count($errors) > 0)
 			<div class="chatter-alert alert alert-danger">
-				<div class="container">
+				<div class="container-main-inner">
 					<p><strong><i class="chatter-alert-danger"></i> @lang('chatter::alert.danger.title')</strong> @lang('chatter::alert.danger.reason.errors')</p>
 					<ul>
 						@foreach ($errors->all() as $error)
