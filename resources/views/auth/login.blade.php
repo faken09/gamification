@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-inner">
+<div class="container-main-inner">
     <div id="login-form">
-    <h1>{{ __('Log på') }}</h1>
-
+    <b>{{ __('Log på') }}</b>
+<p>Det er gratis, og det bliver det ved med at være.</p>
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
@@ -37,7 +37,7 @@
         </label>
 
 
-        <button class="button" type="submit">
+        <button class="button btn-big" type="submit">
             {{ __('Login') }}
         </button>
         <br />

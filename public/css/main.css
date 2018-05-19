@@ -108,7 +108,7 @@ html {
 body {
     min-height: 100%;
     font-family: 'Roboto', sans-serif !important;
-    background-color: #1C242D;
+    background-color: #1C242D !important;
     overflow-y: scroll;
     overflow-x: hidden;
 
@@ -134,11 +134,116 @@ html, body {
     margin-right: 10px !important;
 }
 
+#chatter ul.discussions li a.discussion_list, #chatter ul.discussions li .chatter_posts {
+    background: #2f4963 !important;
+    border-top: none !important;
+}
+
+#chatter ul.discussions li:nth-child(2n) a.discussion_list, #chatter ul.discussions li:nth-child(2n) .chatter_posts {
+    background: #283a4c !important;
+}
+
+#chatter ul.discussions li a.discussion_list .chatter_middle h3.chatter_middle_title {
+    color:#fff !important;
+    font-size: 14px !important;
+}
+
+#chatter ul.discussions li .chatter_posts .chatter_post_actions p {
+    padding: 3px 10px !important;
+}
+
+#chatter ul.discussions li .chatter_posts {
+    background: #2f4963 !important;
+    border-top: 1px solid #1d3042 !important;
+
+}
+
+#chatter ul.discussions li .chatter_posts .chatter_middle > span a {
+    color: #C4C4C4 !important;
+}
+
+.chatter_body p {
+    color:#fff !important;
+}
+
+#chatter .conversation {
+    border-bottom: 1px solid #1d3042 !important;
+    background: #2f4963 !important;
+}
+
+#chatter .chatter_avatar span.chatter_avatar_circle {
+    width: 30px !important;
+    height: 30px !important;
+    line-height: 32px !important;
+    text-align: center !important;
+    border-radius: 30px !important;
+    color: #fff !important;
+    font-size: 14px !important;
+}
+
+#chatter .chatter_avatar {
+    float: left;
+    margin: 5px;
+    margin-right: 15px;
+    position: absolute;
+    left: 10px;
+    margin-top: 10px !important;
+    top: 7px !important;
+}
+
+
+#chatter ul.discussions li a.discussion_list .chatter_middle, #chatter ul.discussions li .chatter_posts .chatter_middle {
+    margin-left: 46px !important;
+}
+
+#chatter ul.discussions li a.discussion_list .chatter_right .chatter_count, #chatter ul.discussions li .chatter_posts .chatter_right .chatter_count {
+    margin-top:0px !important;
+}
+
+#chatter ul.discussions li a.discussion_list .chatter_right, #chatter ul.discussions li .chatter_posts .chatter_right {
+    right: 0 !important;
+}
+
+#chatter ul.discussions li a.discussion_list .chatter_post_actions p, #chatter ul.discussions li .chatter_posts .chatter_post_actions p {
+    background: #1d3042 !important;
+}
+
+#chatter .conversation ul.discussions li .chatter_posts .chatter_middle {
+    padding-left: 0px !important;
+}
+
+#chatter ul.discussions li .chatter_posts {
+    margin-bottom: 10px !important;
+    padding: 0px !important;
+    padding-left: 15px !important;
+    padding-top: 5px !important;
+}
+
+.chatter_user {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#chatter ul.discussions li .chatter_posts {
+    margin-bottom: 0px !important;
+    padding-bottom: 15px !important;
+}
+
 .container-main {
     padding-bottom: 117px;
 }
-#footer {
 
+#chatter .margin-top {
+    margin-top: 80px !important;
+}
+
+@media (max-width: 700px) {
+    .nav {
+        display: block !important;
+    }
+}
+
+#footer {
     margin-top: -117px;
     width: 100%;
     background: #000;
@@ -332,10 +437,12 @@ b, strong {
     width: 100%;
     padding-bottom: 5px;
     padding-top: 5px;
-    background: #2f4963;
+    background: #264e75;
     border-bottom: 1px solid #1c242d;
     z-index: 100;
     position: relative;
+    border: 1px solid rgba(34, 134, 199, 0.4);
+    box-shadow: inset 0 0 50px rgba(34, 134, 199, 0.3);
 }
 
 #navigation .mg {
@@ -346,7 +453,7 @@ b, strong {
 #navigation a {
 
 text-decoration: none;
-    color: #C4C4C4;
+    color: #f1f1f1;
 
 }
 
@@ -390,6 +497,7 @@ text-decoration: none;
 .container-main  {
     float:left;
     width:100%;
+    margin-bottom: 200px;
 }
 
 
@@ -469,8 +577,12 @@ text-decoration: none;
 }
 
 #login-form {
-    width: 600px;
+    width: 400px;
     margin: 0 auto;
+    background: #2f4963;
+    padding: 20px;
+    margin-top: 100px;
+    border-radius: 3px;
 }
 
 form {
@@ -708,7 +820,9 @@ section {
 
 .profile-avatar {
     float: left;
-    background: #2f4963;
+    background: #264e75;
+    border: 1px solid rgba(34, 134, 199, 0.4);
+    box-shadow: inset 0 0 50px rgba(34, 134, 199, 0.3)
 }
 
 .profile-achivement {
@@ -725,8 +839,10 @@ section {
 .achivement-label {
     text-align: center;
     text-align: center;
-    background: #2f4963;
+    background: #264e75;
     padding: 5px;
+    border: 1px solid rgba(34, 134, 199, 0.4);
+    box-shadow: inset 0 0 50px rgba(34, 134, 199, 0.3)
 }
 
 .avatar {
