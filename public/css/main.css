@@ -135,17 +135,19 @@ html, body {
 }
 
 #chatter ul.discussions li a.discussion_list, #chatter ul.discussions li .chatter_posts {
-    background: #2f4963 !important;
+    background: #2f4963e3 !important;
     border-top: none !important;
 }
 
 #chatter ul.discussions li:nth-child(2n) a.discussion_list, #chatter ul.discussions li:nth-child(2n) .chatter_posts {
-    background: #283a4c !important;
+    background: #283a4c6b !important;
 }
 
 #chatter ul.discussions li a.discussion_list .chatter_middle h3.chatter_middle_title {
     color:#fff !important;
     font-size: 14px !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
 }
 
 #chatter ul.discussions li .chatter_posts .chatter_post_actions p {
@@ -220,8 +222,9 @@ html, body {
 }
 
 .chatter_user {
-    font-weight: bold;
-    font-size: 13px;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    color: #C4C4C4 !important;
 }
 
 #chatter ul.discussions li .chatter_posts {
@@ -242,6 +245,27 @@ html, body {
         display: block !important;
     }
 }
+
+#chatter ul.discussions {
+    background: none !important;
+}
+
+#chatter ul.discussions li a.discussion_list .chatter_right .chatter_count, #chatter ul.discussions li .chatter_posts .chatter_right .chatter_count {
+    font-size: 13px !important;
+}
+
+#chatter ul.discussions li a.discussion_list .chatter_middle span.chatter_middle_details, #chatter ul.discussions li .chatter_posts .chatter_middle span.chatter_middle_details {
+    color: #969696 !important;
+}
+
+
+.chatter_user:hover {
+    text-decoration: underline !important;
+    color:#FFFFFF !important;
+
+}
+
+
 
 #footer {
     margin-top: -117px;
