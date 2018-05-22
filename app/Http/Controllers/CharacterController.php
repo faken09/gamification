@@ -104,13 +104,4 @@ class CharacterController extends Controller
 
     }
 
-    // Show specific character
-    public function showQuest($name)
-    {
-        $character = Character::where('name', '=', $name)->firstOrFail();
-        if ($character) {
-            $quests = Quest::orderBy('required_level', 'ASC')->get();
-            return view('characters.quests.index', compact('character', 'quests'));
-        }
-    }
 }

@@ -26,36 +26,20 @@
 
 <div id="app">
     <nav id="navigation">
-        <div class="container-main-inner">
+        <div {{ (!Request::is('quests*') ? 'class=container-main-inner' : '') }}>
             <ul>
                 {{-- guest links for user not logged in--}}
                 <li class="left" style="margin-top:0px;">
                     <a href="{{ url('/') }}">
-                        <img src="{{ asset('img/logo.png') }}">
+                        <img {{ (Request::is('quests*') ? "style=margin-left:14px;" : '') }} src="{{ asset('img/logo.png') }}">
                     </a>
                 </li>
-
-                @guest
-                <li class="right">
-                    <a href="{{ url('/') }}">
-                        Community
-                    </a>
-                </li>
-                <li class="right">
-                    <a href="{{ url('/') }}">
-                        Catalog
-                    </a>
-                </li>
-
-                @endguest
-
-
 
                 {{-- if user is logged in then show user links --}}
                 @auth
                 <li class="right "><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Log af') }}</a></li> {{-- Logout link for user --}}
                 <li class="right"><a {{ (Request::is('home/'.Auth::user()->name) ? 'class=navlink-active' : '') }} href="{{ route('home', Auth::user()->name) }}">{{ Auth::user()->name }}</a></li> {{-- User page link --}}
-                <li class="right"><a href="#">Quests</a></li>  {{-- Quest link --}}
+                <li class="right"><a {{ (Request::is('quests*') ? 'class=navlink-active' : '') }} href="#">Quests</a></li>  {{-- Quest link --}}
                 {{-- If user have role Admin then show admin navigations links --}}
                 @if(Auth::user()->role == "admin")
                     <li class="right margin-r"><a {{ (Request::is('*admin*') ? 'class=navlink-active' : '') }} href="{{ route('admin.dashboard')}}">Admin controlpanel</a></li>

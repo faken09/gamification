@@ -25,10 +25,12 @@
 	<div id="chatter_header" style="background-color:{{ $discussion->color }}">
 		<div class="container-main-inner">
 			<a class="back_btn" href="/{{ Config::get('chatter.routes.home') }}"><i class="chatter-back"></i></a>
-			<h1>{{ $discussion->title }}</h1><span class="chatter_head_details"> @lang('chatter::messages.discussion.head_details')<a class="chatter_cat" href="/{{ Config::get('chatter.routes.home') }}/{{ Config::get('chatter.routes.category') }}/{{ $discussion->category->slug }}" style="background-color:{{ $discussion->category->color }}">{{ $discussion->category->name }}</a></span>
+			<h1>{{ $discussion->title }}</h1>
 		</div>
 	</div>
-
+	<div class="container-main-inner">
+		<span class="chatter_head_details"> @lang('chatter::messages.discussion.head_details')<a class="chatter_cat" href="/{{ Config::get('chatter.routes.home') }}/{{ Config::get('chatter.routes.category') }}/{{ $discussion->category->slug }}" style="background-color:{{ $discussion->category->color }}">{{ $discussion->category->name }}</a></span>
+	</div>
 	@if(config('chatter.errors'))
 		@if(Session::has('chatter_alert'))
 			<div class="chatter-alert alert alert-{{ Session::get('chatter_alert_type') }}">
@@ -57,10 +59,10 @@
 
 	<div class="container-main-inner margin-top">
 
-	    <div class="row">
+	    <div>
 
 			@if(! Config::get('chatter.sidebar_in_discussion_view'))
-	        	<div class="col-md-12">
+	        	<div>
             @else
                 <div class="col-md-3 left-column">
                     <!-- SIDEBAR -->
@@ -100,6 +102,24 @@
 			                			</div>
 			                		@endif
 
+										<div class="chatter_avatar">
+											@if(Config::get('chatter.user.avatar_image_database_field'))
+
+											<?php $db_field = Config::get('chatter.user.avatar_image_database_field'); ?>
+
+													<!-- If the user db field contains http:// or https:// we don't need to use the relative path to the image assets -->
+											@if( (substr($post->user->{$db_field}, 0, 7) == 'http://') || (substr($post->user->{$db_field}, 0, 8) == 'https://') )
+												<img src="{{ $post->user->{$db_field}  }}">
+											@else
+												<img src="{{ Config::get('chatter.user.relative_url_to_image_assets') . $post->user->{$db_field}  }}">
+											@endif
+
+											@else
+												<span class="chatter_avatar_circle" style="background-color:#<?= \DevDojo\Chatter\Helpers\ChatterHelper::stringToColorCode($post->user->{Config::get('chatter.user.database_field_with_user_name')}) ?>">
+					        					{{ ucfirst(substr($post->user->{Config::get('chatter.user.database_field_with_user_name')}, 0, 1)) }}
+					        				</span>
+											@endif
+										</div>
 					        		<div class="chatter_middle">
 					        			<span class="chatter_middle_details"><a class="chatter_user" href=" {{ route('home', $post->user->name) }}">{{ ucfirst($post->user->{Config::get('chatter.user.database_field_with_user_name')}) }}</a> <span class="ago chatter_middle_details">{{ \Carbon\Carbon::createFromTimeStamp(strtotime($post->created_at))->diffForHumans() }}</span></span>
 					        			<div class="chatter_body">
@@ -132,7 +152,24 @@
 
 
 			            <div id="new_discussion">
+							<div class="chatter_avatar">
+								@if(Config::get('chatter.user.avatar_image_database_field'))
 
+								<?php $db_field = Config::get('chatter.user.avatar_image_database_field'); ?>
+
+										<!-- If the user db field contains http:// or https:// we don't need to use the relative path to the image assets -->
+								@if( (substr(Auth::user()->{$db_field}, 0, 7) == 'http://') || (substr(Auth::user()->{$db_field}, 0, 8) == 'https://') )
+									<img src="{{ Auth::user()->{$db_field}  }}">
+								@else
+									<img src="{{ Config::get('chatter.user.relative_url_to_image_assets') . Auth::user()->{$db_field}  }}">
+								@endif
+
+								@else
+									<span class="chatter_avatar_circle" style="background-color:#<?= \DevDojo\Chatter\Helpers\ChatterHelper::stringToColorCode(Auth::user()->{Config::get('chatter.user.database_field_with_user_name')}) ?>">
+		        					{{ strtoupper(substr(Auth::user()->{Config::get('chatter.user.database_field_with_user_name')}, 0, 1)) }}
+		        				</span>
+								@endif
+							</div>
 
 					    	<div class="chatter_loader dark" id="new_discussion_loader">
 							    <div></div>

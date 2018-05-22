@@ -149,9 +149,11 @@ html, body {
 #chatter ul.discussions li a.discussion_list .chatter_middle h3.chatter_middle_title {
     color:#fff !important;
     font-size: 14px !important;
-    font-weight: 500 !important;
+    font-weight: 400 !important;
     text-transform: none !important;
 }
+
+
 
 #chatter ul.discussions li .chatter_posts .chatter_post_actions p {
     padding: 3px 10px !important;
@@ -164,9 +166,8 @@ html, body {
 }
 
 #chatter ul.discussions li .chatter_posts .chatter_middle > span a {
-    color: #C4C4C4 !important;
+    color: #a3b6c7 !important;
 }
-
 .chatter_body p {
     color:#fff !important;
 }
@@ -230,14 +231,30 @@ html, body {
 }
 
 .chatter_user {
-    font-weight: 500 !important;
-    font-size: 13px !important;
-    color: #C4C4C4 !important;
+    font-weight: 400 !important;
+    font-size: 11px !important;
+    color: #a3b6c7 !important;
 }
 
 #chatter ul.discussions li .chatter_posts {
     margin-bottom: 0px !important;
     padding-bottom: 15px !important;
+    padding-left: 55px !important;
+}
+
+#chatter .chatter_avatar span.chatter_avatar_circle {
+    background: none !important;
+    background-image: url(../img/a1.jpg) !important;
+    background-size:cover !important;
+    border-radius: 0px !important;
+}
+
+#chatter #chatter_header h1 {
+    padding-top:24px !important;
+    line-height: 1.4 !important;
+    padding-bottom: 20px !important;
+    float:none !important;
+    margin-left: 44px !important;
 }
 
 .container-main {
@@ -260,12 +277,27 @@ html, body {
 
 #chatter ul.discussions li a.discussion_list .chatter_right .chatter_count, #chatter ul.discussions li .chatter_posts .chatter_right .chatter_count {
     font-size: 13px !important;
+    color: #fff !important;
 }
 
 #chatter ul.discussions li a.discussion_list .chatter_middle span.chatter_middle_details, #chatter ul.discussions li .chatter_posts .chatter_middle span.chatter_middle_details {
     color: #969696 !important;
+    font-size: 11px !important;
+    padding-left: 0px !important;
 }
 
+
+.chatter_cat {
+    background: #ccc;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 10px;
+    padding: 3px 7px;
+    display: inline;
+    color: #fff !important;
+    position: relative;
+    margin-left:5px;
+}
 
 .chatter_user:hover {
     text-decoration: underline !important;
@@ -295,13 +327,19 @@ html, body {
     line-height: 1.4;
 }
 
+.discussion_list:hover {
+    background: none !important;
+    opacity: 0.7;
+}
+
+
 #footer {
-    margin-top: -117px;
+    margin-top: -57px;
     width: 100%;
-    background: #000;
+    background: #181e25;
     float: left;
     text-align: center;
-    padding:40px;
+    padding: 10px;
     color: #c1c1c1;
     font-size: 13px;
 }
@@ -344,12 +382,17 @@ p {
     font-size: 15px;
 }
 
-a {
+a, a ul li, a p {
     text-decoration: none;
     color: #a3b6c7 !important;
 }
 
-a:hover, a:focus {
+
+a:visited, a:visited p, a:visited ul li  {
+    color:#848c92 !important;
+}
+
+a:hover, a:focus, a:hover p {
     color:#fff !important;
 }
 
@@ -503,17 +546,22 @@ b, strong {
     margin-right: 20px;
 }
 
-#navigation a {
+#navigation a, #navigation a:visited {
     font-size: 16px;
     font-weight: 400;
     text-decoration: none;
-    color: #a3b6c7;
+    color: #a3b6c7 !important;
 
 }
 
-.navlink-active {
+#navigation .navlink-active:visited {
     color:#fff !important;
 }
+
+#navigation .navlink-active {
+    color:#fff !important;
+}
+
 
 #navigation li {
     display: inline;
@@ -551,7 +599,7 @@ b, strong {
 .container-main  {
     float:left;
     width:100%;
-    margin-bottom: 200px;
+    margin-bottom: 57px;
 }
 
 
@@ -618,6 +666,7 @@ b, strong {
 .grid-item {
     text-align: center;
     padding:20px;
+    position: relative;
 }
 
 
@@ -669,6 +718,7 @@ form {
     border-radius: 2px;
 
 }
+
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #c1c1c1;
@@ -792,7 +842,6 @@ section {
 
 .snackbar {
     display:block;
-    background:#1c242d;
     padding:10px 10px 16px 10px;
     color:#222 !important;
     font-family:Arial;
@@ -801,6 +850,8 @@ section {
     bottom:-200px;
     transition: bottom 0.5s ease-in-out;
     z-index:9;
+    background: #264e75;
+    box-shadow: inset 0 0 50px rgba(34, 134, 199, 0.3);
 }
 .snackclose, .snacklable {
     bottom:-200px;
@@ -830,7 +881,7 @@ section {
     animation-timing-function: ease-in-out;
     animation-delay:0.2s;
     animation-fill-mode: forwards;
-    border: 1px solid #3a3a3a;
+    border: 1px solid rgba(34, 134, 199, 0.4);
 }
 .snackclose:checked~.snackbar, .snackclose:checked, .snackclose:checked+label {
     animation-name: snackbar-hide;
@@ -895,11 +946,7 @@ section {
 
 .achivement-label {
     text-align: center;
-    text-align: center;
-    background: #264e75;
     padding: 5px;
-    border: 1px solid rgba(34, 134, 199, 0.4);
-    box-shadow: inset 0 0 50px rgba(34, 134, 199, 0.3)
 }
 
 .avatar {
@@ -946,6 +993,24 @@ section {
         display: block;
 
     }
+
+    #chatter #chatter_header h1 {
+        font-size: 16px !important;
+        padding-top: 28px !important;
+    }
+
+    .courseItem .courseinfo p {
+        font-size: 11px !important;
+    }
+
+    .courseItem .courseinfo h2 {
+        font-size: 16px !important;
+    }
+}
+
+.chatter_head_details {
+    float:right;
+    margin-top: 10px;
 }
 
 .pagination {
@@ -963,6 +1028,114 @@ section {
 #pagination .pagination > .active > span {
     color: #fff !important;
 }
+
+#homeHeader {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+#homeHeader h2 {
+    margin-bottom: 5px !important;
+    color:#fff !important;
+}
+
+
+#availableCourses {
+    float: left;
+}
+
+#userAchivement {
+    text-align:center;
+}
+
+#userAchivement img {
+    display: inline-block;
+    margin: 5px 0px;
+    padding: 5px;
+}
+
+.courseinfo {
+    position: absolute;
+    padding: 10px;
+    width: 100%;
+    background: #1c242d;
+    bottom: 0;
+}
+.courseItem {
+    position: relative;
+    outline: 1px solid #265078;
+
+}
+.courseItem img {
+    opacity: 0.7;
+    position: relative;
+    width:100%;
+    height:100%;
+}
+
+.wrapimg {
+    position: relative;
+    width:100%;
+    outline: 1px solid #265078;
+    height:100%;
+}
+
+.courseItem:hover img {
+    opacity: 1;
+}
+
+.courseItem .courseinfo p {
+    color:#fff !important;
+}
+
+.quest-color {
+    color:#A9CF54;
+}
+
+.achivement-color {
+    color:#c2a466;
+}
+
+#forumActivity {
+    width:100%;
+    text-align: center;
+    float:left;
+}
+
+#forumActivity a {
+    display: inline-block;
+}
+
+#quest-info-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 58px;
+    left: 0;
+    background-color: #fff;
+    padding-top: 60px;
+    color: #222;
+    width: 300px;
+}
+
+#quest-info {
+    padding:20px;
+}
+
+#quest-info h1 {
+    font-size: 28px;
+    color:#000;
+    font-weight: bold;
+    text-transform: none;
+    letter-spacing: 0px;
+    margin-bottom: 10px !important;
+}
+
+#quest-info p {
+    color:#000;
+}
+
 
 /* ==========================================================================
    Helper classes

@@ -18,5 +18,5 @@ class UserMadeAnAccount extends Achievement
 
     public $points = 50;
 
-    public $icon = 'a2.jpg';
+    public $icon = 'a1.jpg';
 }
