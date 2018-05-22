@@ -33,4 +33,15 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Character');
     }
+
+    public function chatterposts()
+    {
+        return $this->hasMany('App\ChatterPost');
+    }
+
+    public function chatterdiscussion()
+    {
+        return $this->hasMany('App\ChatterDiscussion');
+    }
+
 }

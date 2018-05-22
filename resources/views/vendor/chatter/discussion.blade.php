@@ -99,24 +99,6 @@
 			                				</p>
 			                			</div>
 			                		@endif
-			                		<div class="chatter_avatar">
-					        			@if(Config::get('chatter.user.avatar_image_database_field'))
-
-					        				<?php $db_field = Config::get('chatter.user.avatar_image_database_field'); ?>
-
-					        				<!-- If the user db field contains http:// or https:// we don't need to use the relative path to the image assets -->
-					        				@if( (substr($post->user->{$db_field}, 0, 7) == 'http://') || (substr($post->user->{$db_field}, 0, 8) == 'https://') )
-					        					<img src="{{ $post->user->{$db_field}  }}">
-					        				@else
-					        					<img src="{{ Config::get('chatter.user.relative_url_to_image_assets') . $post->user->{$db_field}  }}">
-					        				@endif
-
-					        			@else
-					        				<span class="chatter_avatar_circle" style="background-color:#<?= \DevDojo\Chatter\Helpers\ChatterHelper::stringToColorCode($post->user->{Config::get('chatter.user.database_field_with_user_name')}) ?>">
-					        					{{ ucfirst(substr($post->user->{Config::get('chatter.user.database_field_with_user_name')}, 0, 1)) }}
-					        				</span>
-					        			@endif
-					        		</div>
 
 					        		<div class="chatter_middle">
 					        			<span class="chatter_middle_details"><a class="chatter_user" href=" {{ route('home', $post->user->name) }}">{{ ucfirst($post->user->{Config::get('chatter.user.database_field_with_user_name')}) }}</a> <span class="ago chatter_middle_details">{{ \Carbon\Carbon::createFromTimeStamp(strtotime($post->created_at))->diffForHumans() }}</span></span>
@@ -148,24 +130,6 @@
 
 	            	<div id="new_response">
 
-	            		<div class="chatter_avatar">
-		        			@if(Config::get('chatter.user.avatar_image_database_field'))
-
-		        				<?php $db_field = Config::get('chatter.user.avatar_image_database_field'); ?>
-
-		        				<!-- If the user db field contains http:// or https:// we don't need to use the relative path to the image assets -->
-		        				@if( (substr(Auth::user()->{$db_field}, 0, 7) == 'http://') || (substr(Auth::user()->{$db_field}, 0, 8) == 'https://') )
-		        					<img src="{{ Auth::user()->{$db_field}  }}">
-		        				@else
-		        					<img src="{{ Config::get('chatter.user.relative_url_to_image_assets') . Auth::user()->{$db_field}  }}">
-		        				@endif
-
-		        			@else
-		        				<span class="chatter_avatar_circle" style="background-color:#<?= \DevDojo\Chatter\Helpers\ChatterHelper::stringToColorCode(Auth::user()->{Config::get('chatter.user.database_field_with_user_name')}) ?>">
-		        					{{ strtoupper(substr(Auth::user()->{Config::get('chatter.user.database_field_with_user_name')}, 0, 1)) }}
-		        				</span>
-		        			@endif
-		        		</div>
 
 			            <div id="new_discussion">
 

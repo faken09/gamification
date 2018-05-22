@@ -54,17 +54,17 @@
                 {{-- if user is logged in then show user links --}}
                 @auth
                 <li class="right "><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Log af') }}</a></li> {{-- Logout link for user --}}
-                <li class="right"><a href="{{ route('home', Auth::user()->name) }}">{{ Auth::user()->name }}</a></li> {{-- User page link --}}
+                <li class="right"><a {{ (Request::is('home/'.Auth::user()->name) ? 'class=navlink-active' : '') }} href="{{ route('home', Auth::user()->name) }}">{{ Auth::user()->name }}</a></li> {{-- User page link --}}
                 <li class="right"><a href="#">Quests</a></li>  {{-- Quest link --}}
                 {{-- If user have role Admin then show admin navigations links --}}
                 @if(Auth::user()->role == "admin")
-                    <li class="right margin-r"><a href="{{ route('admin.dashboard')}}">Admin controlpanel</a></li>
+                    <li class="right margin-r"><a {{ (Request::is('*admin*') ? 'class=navlink-active' : '') }} href="{{ route('admin.dashboard')}}">Admin controlpanel</a></li>
                 @endif
                 {{-- Admin navigations links end --}}
                 <form id="logout-form" action="{{ route('logout') }}" method="POST"> @csrf </form>
                 @endauth
                 <li class="right">
-                    <a href="{{ url('/forums') }}">
+                    <a {{ (Request::is('*forums*') ? 'class=navlink-active' : '') }} href="{{ url('/forums') }}">
                         Forums
                     </a>
                 </li>
