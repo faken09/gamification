@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBattleRoundsTable extends Migration
+class CreateUsersQuestPivot extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,17 @@ class CreateBattleRoundsTable extends Migration
      */
     public function up()
     {
-        Schema::create('battle_rounds', function (Blueprint $table) {
+        //
+
+        Schema::create('users_quests_pivot', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->integer('completed_id')->unsigned();
+            $table->foreign('completed_id')->references('id')->on('users')->onDelete('cascade');
+
             $table->integer('quest_id')->unsigned();
-            $table->foreign('quest_id')->references('id')->on('quests')->onDelete('restrict');
+            $table->foreign('quest_id')->references('id')->on('quests')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
@@ -28,6 +35,6 @@ class CreateBattleRoundsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('battle_rounds');
+        //
     }
 }

@@ -9,9 +9,23 @@ use App\Location;
 use App\Quest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class QuestController extends Controller
 {
+
+    // Create a new thumbnail file for images
+    public function createThumbnailfromFile($width, $height, $orignalfile)
+    {
+        $upload = Image::make($orignalfile->getRealPath())->fit($width, $height, function ($c) {
+            $c->aspectRatio();
+        });
+        $upload->encode('jpg');
+        return $upload;
+    }
+
+
     public function index()
     {
 
@@ -21,10 +35,8 @@ class QuestController extends Controller
 
     public function create()
     {
-        $locations = Location::orderBy('name', 'ASC')->get();
-        $enemies = Enemy::orderBy('name', 'ASC')->get();
         $levels = Level::orderBy('id', 'ASC')->get();
-        return view('admin.quests.create',compact('locations', 'enemies', 'levels'));
+        return view('admin.quests.create', compact('levels'));
     }
 
     public function store(QuestRequest $request)
@@ -34,35 +46,47 @@ class QuestController extends Controller
         $quest = new Quest;
         $quest->title = $request->title;
         $quest->description = $request->description;
+        $quest->info = $request->info;
+        $quest->solution = $request->solution;
         $quest->gold_rewards = $request->gold_rewards;
         $quest->experience_gains = $request->experience_gains;
 
 
-
-        if($request->location){
-            $location = Location::findOrFail($request->location);
-            if($location->id) {
-                $quest->location_id = $location->id;
-            }
-        }
-        if($request->enemy){
-            $enemy = Enemy::findOrFail($request->enemy);
-            if($enemy->id) {
-                $quest->enemy_id = $enemy->id;
-            }
-        }
-
-
-        if($request->required_level){
+        if ($request->required_level) {
             $level = Level::findOrFail($request->required_level);
-            if($level->id) {
+            if ($level->id) {
                 $quest->required_level = $level->id;
             }
         }
 
+        if ($request->file('image')) {
+            $image = md5($request->name . microtime());
+            $imageFilename = $image . ".jpg";
+            $file = @file_get_contents($request->image);
+            $imageSaved = Storage::disk(env('STORAGE_DISK_DRIVER'))->put('quests/' . $imageFilename, $file,
+                [
+                    'visibility' => 'public',
+                    'CacheControl' => 'max-age=31536000'
+                ]);
 
-        if ($quest->save()) {
-            return redirect()->route('admin.quests.index')->with('flash_message', $quest->id . ' er blevet oprettet!');
+            if ($imageSaved) {
+                $imageFilename_sm = $image . '_sm.jpg';
+                $file = $this->createThumbnailfromFile(420, 236, $request->file('image'));
+                $imageSmSaved = Storage::disk(env('STORAGE_DISK_DRIVER'))->put('quests/' . $imageFilename_sm, $file,
+                    [
+                        'visibility' => 'public',
+                        'CacheControl' => 'max-age=31536000'
+                    ]);
+            }
+
+        }
+        if ($imageSaved && $imageSmSaved) {
+            $quest->image = $imageFilename;
+
+            if ($quest->save()) {
+                return redirect()->route('admin.quests.index')->with('flash_message', $quest->id . ' er blevet oprettet!');
+            }
+
         }
 
 
@@ -72,25 +96,54 @@ class QuestController extends Controller
     {
         $quest = Quest::findOrFail($id);
         if ($quest) {
-            $enemies = Enemy::orderBy('name', 'ASC')->get();
-            $locations = Location::orderBy('id', 'ASC')->get();
+
             $levels = Level::orderBy('id', 'ASC')->get();
-            return view('admin.quests.edit', compact('quest', 'enemies', 'locations', 'levels'));
+            return view('admin.quests.edit', compact('quest', 'levels'));
         }
     }
 
-    public function update($id, EnemyRequest $request)
+    public function update($id, QuestRequest $request)
     {
-        $enemy = Enemy::findOrFail($id);
-        if ($enemy) {
-            $enemy->name = $request->name;
-            $enemy->description = $request->description;
-            $enemy->health = $request->health;
-            $enemy->attack = $request->attack;
+        $quest = Quest::findOrFail($id);
+        if ($quest) {
+            $quest->title = $request->title;
+            $quest->description = $request->description;
+            $quest->info = $request->info;
+            $quest->solution = $request->solution;
+            $quest->gold_rewards = $request->gold_rewards;
+            $quest->experience_gains = $request->experience_gains;
 
 
-            if ($enemy->save()) {
-                return redirect()->route('admin.enemies.index')->with('flash_message', $enemy->id . ' er blevet oprettet!');
+            if ($request->required_level) {
+                $level = Level::findOrFail($request->required_level);
+                if ($level->id) {
+                    $quest->required_level = $level->id;
+                }
+            }
+
+            if ($request->file('image')) {
+                $imageFilename = $quest->image;
+                $file = @file_get_contents($request->image);
+                $imageSaved = Storage::disk(env('STORAGE_DISK_DRIVER'))->put('quests/' . $imageFilename, $file,
+                    [
+                        'visibility' => 'public',
+                        'CacheControl' => 'max-age=31536000'
+                    ]);
+
+                if ($imageSaved) {
+                    $imageFilename_sm = $image . '_sm.jpg';
+                    $file = $this->createThumbnailfromFile(420, 236, $request->file('image'));
+                    $imageSmSaved = Storage::disk(env('STORAGE_DISK_DRIVER'))->put('quests/' . $imageFilename_sm, $file,
+                        [
+                            'visibility' => 'public',
+                            'CacheControl' => 'max-age=31536000'
+                        ]);
+                }
+
+            }
+
+            if ($quest->save()) {
+                return redirect()->route('admin.quests.index')->with('flash_message', $quest->id . ' er blevet oprettet!');
             }
 
 
@@ -100,7 +153,6 @@ class QuestController extends Controller
     // delete one player
     public function destroy($id)
     {
-
         //find id by slug
         $quest = Quest::findOrFail($id);
 

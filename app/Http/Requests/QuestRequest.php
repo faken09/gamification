@@ -23,8 +23,31 @@ class QuestRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+        switch($this->method())
+        {
+            case 'GET':
+            case 'DELETE':
+            {
+                return [];
+            }
+            case 'POST':
+            {
+                return [
+                    'title' => 'required|min:2|max:130|unique:quests,title',
+                    'description' => 'min:5',
+
+                ];
+            }
+            case 'PUT':
+            case 'PATCH':
+            {
+                return [
+                    'title' => 'min:2|max:130|unique:quests,title,'.$this->id,
+                    'description' => 'min:5',
+
+                ];
+            }
+            default:break;
+        }
     }
 }

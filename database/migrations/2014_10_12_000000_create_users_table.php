@@ -19,6 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('role')->default('player');
+
+            $table->integer('level_id')->unsigned()->default(1);
+            $table->foreign('level_id')->references('id')->on('levels')->onDelete('restrict');
             $table->rememberToken();
             $table->timestamps();
         });

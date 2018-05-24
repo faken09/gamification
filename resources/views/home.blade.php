@@ -13,7 +13,7 @@
                             {{$user->name}}
                         </div>
                         <div class="profile-type">
-                            Level 1
+                            Level {{$user->level_id}}
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,8 @@
 
                     <div class="profile-container">
                         <div class="achivement-count quest-color">
-                            32
+                            {{$user->userquests()->get()->count()}}
+
                         </div>
                         <div class="achivement-label quest-color">
                             Quests
@@ -83,35 +84,35 @@
             <h4 style="text-align: center">Hej {{$user->name}} du har nogle nye <span class="quest-color">quests!</span></h4>
                 <p style="text-align: center">Du kan påbegynde dine <span class="quest-color">quests</span> ved at klikke på dem nedenunder!</p>
             @endif
+
+
+
             <div class="grid">
-                <div class="grid-item">
-                    <a href="{{ route('quest')}}" class="courseItem">
-                        <div class="wrapimg">
-                    <img style="width:100%" src="{{ asset('img/course-banner/html5.jpg') }}">
 
-                        <div class="courseinfo">
-                    <h2 class="quest-color">Ny Quest? - HTML5</h2>
+                @foreach($quests as $quest)
+                    <?php
+                    $questCompleted = $user->userquests()->where('quest_id', $quest->id)->get()
+                ?>
 
-                    <p>Lær det grundlæggende i HTML, det væsentlige sprog på internettet. Denne quest dækker version 5 af HTML.</p>
-                        </div>
-                            </div>
-                    </a>
-                </div>
-                <div class="grid-item">
-                    <a href="{{ route('quest')}}" class="courseItem">
-                        <div class="wrapimg">
-                    <img style="width:100%" src="{{ asset('img/course-banner/css3.jpg') }}">
-                        <div class="courseinfo">
-                            <h2 class="quest-color">Ny Quest? - CSS3</h2>
 
-                    <p>Lær hvordan du stiler og visuelt organiserer HTML med CSS. Denne quest dækker version 3 af CSS.</p>
-                            </div>
+                    <div class="grid-item">
+                        @if($questCompleted->first()) <span class="questCompleted achivement-color">Completed</span> @endif
+                        <a href="{{route('user.quest.show', $quest->id)}}" class="courseItem">
+                            <div class="wrapimg @if($questCompleted->first())doneQuest @endif">
+                                <img style="width:100%" src="{{asset(env('STORAGE_DISK_PATH')."/quests/".$quest->image)}}">
+
+                                <div class="courseinfo">
+
+                                    <h2 class="quest-color">{{$quest->title}}</h2>
+
+                                    <p>{{$quest->description}}</p>
+                                </div>
                             </div>
                         </a>
-                </div>
+                    </div>
+                    @endforeach
                 </div>
             </div>
-        </div>
 
             <div id="forumActivity">
                 <h2>Seneste forum aktivitet</h2>

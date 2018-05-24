@@ -11,24 +11,15 @@ class Quest extends Model
     protected $table = 'quests';
 
 
-    public function Enemy()
-    {
-        return $this->belongsTo('App\Enemy');
-    }
-
-    public function location()
-    {
-        return $this->belongsTo('App\Location');
-    }
-
     public function level()
     {
         return $this->belongsTo('App\Level');
     }
 
-    public function characters()
+
+    public function user()
     {
-        return $this->belongsToMany('App\Character');
+        return $this->belongsToMany('App\User', 'users_quests_pivot', 'user_id', 'quest_id');
     }
 
 

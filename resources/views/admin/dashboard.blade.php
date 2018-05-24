@@ -16,9 +16,7 @@
         <nav>
             <nav>
                 <ul>
-                    <li><a href="{{route('admin.locations.index')}}">Steder &#187;</a></li>
                     <li><a href="{{route('admin.quests.index')}}">Quests &#187;</a></li>
-                    <li><a href="{{route('admin.enemies.index')}}">Fjender &#187;</a></li>
                 </ul>
             </nav>
         </nav>

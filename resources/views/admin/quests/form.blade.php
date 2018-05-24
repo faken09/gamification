@@ -1,5 +1,5 @@
 <div>
-    <label>Name
+    <label>Title
         @if ($errors->has('title'))
             <span class="span-error">
                     :{{ $errors->first('title') }}
@@ -21,7 +21,39 @@
         @endif
     </label>
 
-    <textarea class="input-st" autocomplete="off" type="text" name="description">@if(isset($quest->title)){{$quest->title }}@else {{old('description')}}@endif</textarea>
+    <input class="input-st" autocomplete="off" type="text" name="description" @if(isset($quest->description)) value="{{$quest->description }}"
+           @else value="{{ old('description') }}" @endif>
+
+
+</div>
+
+
+<div>
+    <label>info
+        @if ($errors->has('info'))
+            <span class="span-error">
+                    :{{ $errors->first('info') }}
+                                    </span>
+        @endif
+    </label>
+
+    <textarea class="input-st" autocomplete="off" type="text" name="info">@if(isset($quest->info)){{$quest->info }}@else {{old('info')}}@endif</textarea>
+
+</div>
+
+
+<div>
+    <label>Solution
+        @if ($errors->has('solution'))
+            <span class="span-error">
+                    :{{ $errors->first('solution') }}
+                                    </span>
+        @endif
+    </label>
+
+    <input class="input-st" autocomplete="off" type="text" name="solution" @if(isset($quest->solution)) value="{{$quest->solution }}"
+           @else value="{{ old('solution') }}" @endif>
+
 
 </div>
 
@@ -82,58 +114,18 @@
 </div>
 
 <div>
-    <label>Sted
-        @if ($errors->has('location'))
+    <label>Image
+        @if ($errors->has('image'))
             <span class="span-error">
-                    :{{ $errors->first('location') }}
+                                        :{{ $errors->first('image') }}
                                     </span>
         @endif
     </label>
-    <select class="input-st" name="location">
-        @if(isset($quest)) {{--  if edit page  --}}
-        @foreach($locations as $location)
-            <option
-                    @if($location->id == $quest->location_id) selected @endif
-            value="{{$location->id}}"> {{$location->name}}
-            </option>
-        @endforeach
-        @else {{--  Show all players on create page --}}
-        @foreach($locations as $location)
-            <option
-                    value="{{$location->id}}"> {{$location->name}}
-            </option>
-        @endforeach
 
-        @endif
-    </select>
-
-</div>
-
-<div>
-    <label>Fjende
-        @if ($errors->has('enemy'))
-            <span class="span-error">
-                    :{{ $errors->first('enemy') }}
-                                    </span>
-        @endif
-    </label>
-    <select class="input-st" name="enemy">
-        @if(isset($quest)) {{--  if edit page  --}}
-        @foreach($enemies as $enemy)
-            <option
-                    @if($enemy->id == $quest->enemy_id) selected @endif
-            value="{{$enemy->id}}"> {{$enemy->name}}
-            </option>
-        @endforeach
-        @else {{--  Show all players on create page --}}
-        @foreach($enemies as $enemy)
-            <option
-                    value="{{$enemy->id}}"> {{$enemy->name}}
-            </option>
-        @endforeach
-
-        @endif
-    </select>
+    @if(isset($enemy->image))
+        <img src="{{asset(env('STORAGE_DISK_PATH')."/enemy/".$enemy->image)}}">
+    @endif
+    <input type="file" name="image">
 
 </div>
 

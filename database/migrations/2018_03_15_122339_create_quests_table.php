@@ -17,6 +17,9 @@ class CreateQuestsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('description');
+            $table->text('info');
+            $table->string('solution');
+            $table->string('image');
 
             $table->integer('experience_gains')->nullable();
             $table->integer('gold_rewards')->nullable();
@@ -32,12 +35,6 @@ class CreateQuestsTable extends Migration
             $table->integer('rgt')->nullable();
             $table->integer('depth')->nullable();
 
-            // Location of quest battle between character and monster
-            $table->integer('location_id')->unsigned();
-            $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
-
-            $table->integer('enemy_id')->unsigned();
-            $table->foreign('enemy_id')->references('id')->on('enemies')->onDelete('cascade');
 
             $table->timestamps();
         });

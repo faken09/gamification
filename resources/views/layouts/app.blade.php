@@ -12,6 +12,7 @@
           rel="stylesheet">
     <!-- Styles -->
 
+    <link href="{{ asset('css/jquery-linedtextarea.css') }}" type="text/css" rel="stylesheet" />
     <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
@@ -108,8 +109,8 @@
     });
 </script>
 
-<link src="{{ asset('js/plugins.js') }}">
-<link src="{{ asset('js/main.js') }}">
+<script src="{{ asset('js/plugins.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
 <script>
     window.ga = function () {
@@ -125,6 +126,14 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 @yield('js')
 @endif
+<script src="{{ asset('js/jquery-linedtextarea.js') }}"></script>
+<script>
+    $(function() {
+        $(".lined").linedtextarea(
+
+        );
+    });
+</script>
 
 </body>
 </html>

@@ -29,9 +29,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function characters()
+
+    public function userquests()
     {
-        return $this->hasMany('App\Character');
+        return $this->belongsToMany('App\Quest', 'users_quests_pivot', 'user_id', 'quest_id');
     }
 
     public function chatterposts()

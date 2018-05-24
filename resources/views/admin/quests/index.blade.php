@@ -16,8 +16,7 @@
                     <ul>
                         <li>
                             {{$quest->title}} - <a href='{{route('admin.quests.edit', $quest->id)}}'>Rediger</a> <br />
-                            <img height="100" src="{{asset(env('STORAGE_DISK_PATH')."/locations/".$quest->location->image)}}">
-                            <img height="100" src="{{asset(env('STORAGE_DISK_PATH')."/enemies/".$quest->enemy->image)}}">
+                            <img height="100" src="{{asset(env('STORAGE_DISK_PATH')."/quests/".$quest->image)}}">
                             <br />  {{$quest->description}}      <br />
                             {!! Form::open(['route' => ['admin.quests.destroy', $quest->id], 'method' => 'delete']) !!}
                             <button type="submit" onclick='return confirm("Er du sikker på du vil slette {{ $quest->title }} ?")'>

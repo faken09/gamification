@@ -1117,6 +1117,7 @@ section {
     padding-top: 60px;
     color: #222;
     width: 300px;
+    overflow-y: scroll;
 }
 
 #quest-info {
@@ -1135,7 +1136,70 @@ section {
 #quest-info p {
     color:#000;
 }
+.questCompleted {
+    position: absolute;
+    font-size: 50px;
+    font-weight: bold;
+    z-index: 12;
+    width: 100%;
+    left: 0;
+    bottom: 50%;
+}
 
+.doneQuest {
+    opacity: 0.3;
+}
+
+.questForm {
+    margin-left: 310px;
+    margin-right: 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 58px;
+    top: 55px;
+    background: #1d3042;
+    padding-top: 25px;
+}
+
+.questForm p {
+    float: left;
+    clear: both;
+    margin-left: 70px !important;
+}
+
+.questForm a:visited {
+    color: #a3b6c7 !important;
+}
+
+.questForm .btn-big {
+    width:auto !important;
+    float:left;
+    clear:both;
+    margin-left: 70px;
+}
+
+.linedwrap {
+    border: none !important;
+    padding: 3px;
+    background: #1d3042;
+    width: auto !important;
+}
+
+.linedtextarea textarea {
+    padding-right: 0.3em;
+    padding-top: 0.3em;
+    border: 0;
+    width:100% !important;
+    background-color: #1d3042;
+    color:#ccc;
+    position: absolute;
+}
+
+.linedtextarea textarea, .linedwrap .codelines .lineno {
+    font-size: 15px !important;
+    font-family: monospace;
+    line-height: normal !important;
+}
 
 /* ==========================================================================
    Helper classes

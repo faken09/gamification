@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Quest;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -26,6 +27,7 @@ class HomeController extends Controller
     {
 
         $user = User::where('name', $name)->first();
-        return view('home', compact('user'));
+        $quests = Quest::all();
+        return view('home', compact('user','quests'));
     }
 }
