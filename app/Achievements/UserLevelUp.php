@@ -18,5 +18,5 @@ class UserLevelUp extends Achievement
 
     public $points = 50;
 
-    public $icon = 'a4.jpg';
+    public $icon = 'a3.jpg';
 }

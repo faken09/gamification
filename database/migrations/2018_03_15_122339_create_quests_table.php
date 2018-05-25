@@ -19,6 +19,7 @@ class CreateQuestsTable extends Migration
             $table->string('description');
             $table->text('info');
             $table->string('solution');
+            $table->text('textarea');
             $table->string('image');
 
             $table->integer('experience_gains')->nullable();

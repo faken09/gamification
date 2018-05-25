@@ -138,12 +138,12 @@ html, body {
 }
 
 #chatter ul.discussions li a.discussion_list, #chatter ul.discussions li .chatter_posts {
-    background: #2f4963e3 !important;
+    background: #2d455d !important;
     border-top: none !important;
 }
 
 #chatter ul.discussions li:nth-child(2n) a.discussion_list, #chatter ul.discussions li:nth-child(2n) .chatter_posts {
-    background: #283a4c6b !important;
+    background: #212d3a !important;
 }
 
 #chatter ul.discussions li a.discussion_list .chatter_middle h3.chatter_middle_title {
@@ -1064,7 +1064,6 @@ section {
 }
 .courseItem {
     position: relative;
-    outline: 1px solid #265078;
 
 }
 .courseItem img {

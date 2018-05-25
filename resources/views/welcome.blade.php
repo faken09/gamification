@@ -5,9 +5,9 @@
         <div class="container-main-inner">
                 <div class="welcome">
 
-                    <h2>JOIN THE CodeQuest</h2>
+                    <h2>TILSLUT DIG CodeQuest</h2>
 
-                    <h1>BECOME A LEGENDary coder</h1>
+                    <h1>BLIV EN LEGENDARISK KODER</h1>
 
 
                 </div>
@@ -16,8 +16,8 @@
                 <div class="grid-item">
                     <img style="width:100%" src="{{ asset('img/fp.png') }}">
 
-                    <h2>What is CodeQuest?</h2>
-                    <p>Challenge yourself on kata, created by the community to strengthen different skills. Master your current language of choice, or expand your understanding of a new one.</p>
+                    <h2>hVAD ER  CodeQuest?</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nibh nunc, auctor cursus tincidunt in, gravida eget sem. In accumsan ipsum nec libero suscipit aliquam. </p>
                 </div>
                 <div class="grid-item">
                     <div id="register-form">
@@ -66,7 +66,7 @@
                                     </button>
                                     <br />
                                     <a href="{{ route('password.request') }}">
-                                        {{ __('I forgot my username or password.') }}
+                                        {{ __('Jeg har glemt mit brugernavn eller adgangskode?') }}
                                     </a>
 
                                 </div>
@@ -156,11 +156,7 @@
 
                 <h1>Don't just watch, join in</h1>
 
-                <p>Welcome to a community where millions of people and thousands of interests collide in a
-                    beautiful explosion of video games, pop culture, and conversation. With chat built into every
-                    stream, you don’t just watch on Twitch, you’re a part of the show. From classic tv show
-                    marathons to esports tournaments, if you can imagine it, it’s probably live on Twitch right
-                    now.</p> <br />
+                <p>Praesent at lacinia ex. Sed neque metus, iaculis vitae dapibus id, pellentesque id leo. Cras quis volutpat leo, id commodo quam. Morbi sagittis mattis lorem, sed euismod ante. Etiam consectetur laoreet dolor, nec feugiat lectus. Nullam vel mauris sit amet orci pellentesque vehicula vel malesuada felis. Nullam libero nulla, bibendum in metus eget, mattis interdum ipsum. Curabitur dictum hendrerit ipsum, eu porttitor erat tristique sed. Suspendisse potenti. Duis pharetra tempus laoreet. </p> <br />
 
                 <div class="video-container">
                     <iframe class="video" src="https://www.youtube.com/embed/nWufEJ1Ava0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -177,11 +173,7 @@
 
                 <h1>Don't just watch, join in</h1>
 
-                <p>Welcome to a community where millions of people and thousands of interests collide in a
-                    beautiful explosion of video games, pop culture, and conversation. With chat built into every
-                    stream, you don’t just watch on Twitch, you’re a part of the show. From classic tv show
-                    marathons to esports tournaments, if you can imagine it, it’s probably live on Twitch right
-                    now.</p>
+                <p>Praesent at lacinia ex. Sed neque metus, iaculis vitae dapibus id, pellentesque id leo. Cras quis volutpat leo, id commodo quam. Morbi sagittis mattis lorem, sed euismod ante. Etiam consectetur laoreet dolor, nec feugiat lectus. Nullam vel mauris sit amet orci pellentesque vehicula vel malesuada felis. Nullam libero nulla, bibendum in metus eget, mattis interdum ipsum. Curabitur dictum hendrerit ipsum, eu porttitor erat tristique sed. Suspendisse potenti. Duis pharetra tempus laoreet.</p>
                 <img class="shadow" style="margin-top:20px;width:100%" src="{{ asset('img/fp2.png') }}">
             </div>
         </div>

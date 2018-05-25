@@ -30,6 +30,7 @@
 
                     <div class="profile-container">
                         <div class="achivement-count quest-color">
+
                             {{$user->userquests()->get()->count()}}
 
                         </div>
