@@ -99,7 +99,7 @@
 
                     <div class="grid-item">
                         @if($quest->required_level > $user->level_id)  <span class="required-level">Du skal være Level 2 for at påbegynde denne quest</span> @endif
-                        @if($questCompleted->first()) <span class="questCompleted achivement-color">Completed</span> @endif
+                        @if($questCompleted->first()) <span class="questCompleted achivement-color">Klaret!</span> @endif
                         <a  @if($quest->required_level > $user->level_id) href="#" class="lowLevel" @else href="{{route('user.quest.show', $quest->id)}}" @endif class="courseItem">
                             <div class="wrapimg @if($questCompleted->first())doneQuest @endif">
                                 <img style="width:100%" src="{{asset(env('STORAGE_DISK_PATH')."/quests/".$quest->image)}}">

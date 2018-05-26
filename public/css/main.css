@@ -1137,7 +1137,7 @@ section {
 }
 .questCompleted {
     position: absolute;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
     z-index: 12;
     width: 100%;
@@ -1146,7 +1146,8 @@ section {
 }
 
 .doneQuest {
-    opacity: 0.3;
+    opacity: 0.1;
+    outline: 3px solid #c2a466;
 }
 
 .questForm {
