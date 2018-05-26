@@ -9,12 +9,12 @@ class UserMadeAnAccount extends Achievement
     /*
      * The achievement name
      */
-    public $name = "Joining the Quest";
+    public $name = "velkommen til CodeQuest";
 
     /*
      * A small description for the achievement
      */
-    public $description = "Making your account!";
+    public $description = "Oprette en konto!";
 
     public $points = 50;
 

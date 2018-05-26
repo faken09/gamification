@@ -68,10 +68,10 @@
     <div class="snack-wrap">
         <input type="checkbox" class="snackclose animated" id="close"/><label class="snacklable animated" for="close"></label>
         <div class="snackbar animated">
-            <div id="icon" style="float:left">
+            <div id="icon" style="float:left; display: inline-block;">
                 <img style="margin-right: 10px; width:52px;" src="{{ asset('img/'.$achivement->details->icon) }}">
             </div>
-            <div id="info">
+            <div id="info" style="display: inline-block; width:220px;">
             <p><b style="font-size: 20px;">  {{$achivement->details->name }}</b>   <br />
                 {{$achivement->details->description }}</p>
             </div>

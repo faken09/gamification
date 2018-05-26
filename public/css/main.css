@@ -1200,6 +1200,22 @@ section {
     line-height: normal !important;
 }
 
+.lowLevel {
+    opacity: 0.2;
+    display: block;
+}
+
+.required-level {
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 12;
+    left: 0;
+    bottom: 50%;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
